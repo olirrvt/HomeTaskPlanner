@@ -14,7 +14,7 @@
     max-width: 100%;
   }
   
-  .login-form h2 {
+  .login-form h2, h1 {
     text-align: center;
     margin-bottom: 30px;
     color: #333;
