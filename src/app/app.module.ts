@@ -27,6 +27,8 @@ import { CommonModule } from '@angular/common';
 // Services
 import { MoradorService } from './services/morador.service';
 import { ModalService } from './services/modal.service';
+import { HomeButtonComponent } from './components/home-button/home-button.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { ModalService } from './services/modal.service';
     AvisosComponent,
     VisitantesComponent,
     FooterComponent,
-    ModalComponent
+    ModalComponent,
+    HomeButtonComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
