@@ -34,7 +34,6 @@ export class CadastrarComponent {
   }
 
   EnviarFormulario(): void {
-    // console.log(this.formulario.value);
     const morador: Morador = this.formulario.value;
 
     this.moradorService.postMorador(morador).subscribe(resultado => {

@@ -1,4 +1,4 @@
-// import { Conta } from "./Conta";
+import { Conta } from "./Conta";
 
 export class Morador {
     moradorId: number = 0;
@@ -7,5 +7,5 @@ export class Morador {
     email: string = '';
     senha: string = '';
     isAdministrador: boolean = false;
-    // contas: Conta[] = [];
+    contas: Conta[] = [];
 }

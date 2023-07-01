@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContasService } from 'src/app/services/contas.service';
 
 @Component({
   selector: 'app-contas',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./contas.component.css']
 })
 export class ContasComponent {
+
+  constructor (private contasService: ContasService) {}
 
 }
