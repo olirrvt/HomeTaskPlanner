@@ -1,32 +1,63 @@
 <div class="signup-container">
-    <form class="signup-form">
-        <!-- (ngSubmit)="register()" -->
+
+    <form class="signup-form" [formGroup]="formulario" (ngSubmit)="EnviarFormulario()">
       <h2>Cadastrar</h2>
+
       <div class="form-group">
         <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required>
-        <!-- [(ngModel)]="name"  -->
+        <input
+        type="text"
+        id="nome-id"
+        name="nome"
+        formControlName="nome"
+        placeholder="Digite o seu nome e sobrenome..."
+        required >
+        <!-- [(ngModel)]="nome" -->
       </div>
+
       <div class="form-group">
         <label for="apartment">Apartamento:</label>
-        <input type="text" id="apartment" name="apartment" required>
-        <!-- [(ngModel)]="apartment" -->
+        <input 
+        type="text" 
+        id="apartamento-id" 
+        name="apartamento" 
+        formControlName="apartamento"
+        placeholder="Bloco + Apartamento (ex: 08303)" 
+        required > 
+        <!-- [(ngModel)]="apartamento"  -->
       </div>
+      
       <div class="form-group">
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-        <!-- [(ngModel)]="email" -->
+        <input 
+        type="email" 
+        id="email-id" 
+        name="email"
+        formControlName="email"
+        placeholder="Digite o seu e-mail"
+        required >
+        <!-- [(ngModel)]="email"  -->
       </div>
+
       <div class="form-group">
         <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-        <!-- [(ngModel)]="password" -->
+        <input 
+        type="password"
+        id="senha-id"
+        name="senha" 
+        formControlName="senha"
+        placeholder="Digite a sua senha..."
+        required >
+        <!-- [(ngModel)]="senha"  -->
       </div>
+
       <div class="form-actions">
         <button type="submit" class="signup-button">Cadastrar</button>
       </div>
+
       <div class="login-link">
         <p>Já tem uma conta? <a href="#">Faça login</a></p>
       </div>
+
     </form>
   </div>  
