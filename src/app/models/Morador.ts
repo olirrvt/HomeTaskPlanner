@@ -4,5 +4,5 @@ export class Morador {
     apartamento: string = '';
     email: string = '';
     senha: string = '';
-    isAdm: boolean = false;
+    isAdministrador: boolean = false;
 }

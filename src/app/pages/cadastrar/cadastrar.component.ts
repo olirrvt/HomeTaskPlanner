@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Morador } from 'src/app/models/Morador';
+import { MoradorService } from 'src/app/services/morador.service';
 
 @Component({
   selector: 'app-cadastrar',
@@ -11,7 +12,7 @@ export class CadastrarComponent {
 
   formulario!: FormGroup;
   
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private moradorService: MoradorService) { }
 
   ngOnInit(): void {
     this.inicializarFormulario();
@@ -22,12 +23,17 @@ export class CadastrarComponent {
       nome: ['', Validators.required],
       apartamento: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      senha: ['', Validators.required]
+      senha: ['', Validators.required],
+      isAdministrador: [false]
     });
   }
 
   EnviarFormulario(): void {
     // console.log(this.formulario.value);
-    // const morador: Morador = 
+    const morador: Morador = this.formulario.value;
+
+    this.moradorService.postMorador(morador).subscribe(resultado => {
+      alert('Pessoa inserida com sucesso!');
+    });  
   }
 }
