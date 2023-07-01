@@ -12,6 +12,8 @@ import { AreasComunsComponent } from './pages/areas-comuns/areas-comuns.componen
 import { OcorrenciasComponent } from './pages/ocorrencias/ocorrencias.component';
 import { AvisosComponent } from './pages/avisos/avisos.component';
 import { VisitantesComponent } from './pages/visitantes/visitantes.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { VisitantesComponent } from './pages/visitantes/visitantes.component';
     AreasComunsComponent,
     OcorrenciasComponent,
     AvisosComponent,
-    VisitantesComponent
+    VisitantesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
