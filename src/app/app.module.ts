@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
+// Components for Angular
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -13,13 +14,19 @@ import { OcorrenciasComponent } from './pages/ocorrencias/ocorrencias.component'
 import { AvisosComponent } from './pages/avisos/avisos.component';
 import { VisitantesComponent } from './pages/visitantes/visitantes.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ModalComponent } from './components/modal/modal.component';
 
+// FontAwesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+// Http Requisição
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
+// Services
 import { MoradorService } from './services/morador.service';
+import { ModalService } from './services/modal.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +40,8 @@ import { MoradorService } from './services/morador.service';
     OcorrenciasComponent,
     AvisosComponent,
     VisitantesComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +51,11 @@ import { MoradorService } from './services/morador.service';
     CommonModule,
     ReactiveFormsModule
   ],
-  providers: [HttpClientModule, MoradorService],
+  providers: [
+    HttpClientModule, 
+    MoradorService,
+    ModalService 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
