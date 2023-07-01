@@ -15,6 +15,8 @@ import { AvisosComponent } from './pages/avisos/avisos.component';
 import { VisitantesComponent } from './pages/visitantes/visitantes.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { HomeButtonComponent } from './components/home-button/home-button.component';
+import { CardComponent } from './components/card/card.component';
 
 // FontAwesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -27,8 +29,8 @@ import { CommonModule } from '@angular/common';
 // Services
 import { MoradorService } from './services/morador.service';
 import { ModalService } from './services/modal.service';
-import { HomeButtonComponent } from './components/home-button/home-button.component';
-import { CardComponent } from './components/card/card.component';
+import { ContasService } from './services/contas.service';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { CardComponent } from './components/card/card.component';
   providers: [
     HttpClientModule, 
     MoradorService,
-    ModalService 
+    ModalService,
+    ContasService
   ],
   bootstrap: [AppComponent]
 })
