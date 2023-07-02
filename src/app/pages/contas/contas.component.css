@@ -1,0 +1,75 @@
+.mural {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    width: 75%;
+    max-width: 80%;
+    overflow: hidden;
+  }
+
+  .card-list {
+    display: flex;
+    flex-direction: column; /* Contas uma embaixo da outra */
+    gap: 20px;
+    padding: 20px; /* Espaçamento interno do mural */
+  }
+  
+  .card {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .card-body {
+    margin-top: 10px;
+  }
+  
+  .btn-pagar,
+  .btn-apagar,
+  .btn-pago {
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .btn-pagar {
+    background-color: #28a745;
+    margin-right: 1em;
+  }
+
+  .btn-pago {
+    background-color: #313332;
+    margin-right: 1em;
+  }
+  
+  .btn-apagar {
+    background-color: #dc3545;
+  }
+  
+  .btn-pagar:hover {
+    background-color: #218838;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-apagar:hover {
+    background-color: #c82333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

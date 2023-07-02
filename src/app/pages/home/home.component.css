@@ -26,8 +26,8 @@
 }
 
 .container-cardhome {
+    margin-top: 55%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 30em;
   }  
