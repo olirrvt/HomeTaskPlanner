@@ -33,6 +33,27 @@
     border: 1px solid #ccc;
     border-radius: 3px;
   }
+
+  .ocorrencia-finalizada-alert {
+    display: block;
+    text-align: center;
+    color: #3dad43;
+    font-weight: bold;
+    margin: 20px 19px;
+    padding: 1em;
+    border: 1px solid #3dad43;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #3dad43;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .check-icon {
+    color: #3dad43;
+    font-size: 18px;
+    margin-right: 4em;
+  }
+  
   
   .btn-submit {
     background-color: #45a049;
@@ -46,5 +67,54 @@
   
   .btn-submit:hover {
     background-color: #3dad43;
+    transform: scale(1.05);
+  }  
+  
+  /* Get de Ocorrencias */
+
+  .container-mural {
+    margin: 50px auto;
+    max-width: 80%;
+    padding: 3em;
+    background-color: #f7f7f7; 
+    border-radius: 10px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
   }
   
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .ocorrencias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  
+  .ocorrencia {
+    background-color: #fff; 
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+  }
+  
+  .ocorrencia-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .ocorrencia-id {
+    font-weight: bold;
+  }
+  
+  .ocorrencia-data {
+    color: #888;
+  }
+  
+  .ocorrencia-descricao {
+    padding: 10px;
+    border-top: 1px solid #eaeaea;
+  }  

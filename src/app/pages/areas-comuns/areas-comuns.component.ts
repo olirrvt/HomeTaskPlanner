@@ -10,7 +10,6 @@ import { ReservaService } from 'src/app/services/reserva.service';
   styleUrls: ['./areas-comuns.component.css']
 })
 export class AreasComunsComponent {
-
   formularioReserva!: FormGroup;
   reservasDisponiveis: Reserva[] = [];
   
@@ -74,7 +73,7 @@ export class AreasComunsComponent {
 
     EnviarFormularioReserva(): void {
       const reserva: Reserva = this.formularioReserva.value;
-      
+
       if (reserva.espacoComum) {
         reserva.espacoComum = reserva.espacoComum.toLowerCase();
       }

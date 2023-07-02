@@ -11,6 +11,8 @@ import { formatDate } from '@angular/common';
   styleUrls: ['./ocorrencias.component.css']
 })
 export class OcorrenciasComponent {
+  ocorrenciaFinalizada: boolean = false;
+  ocorrenciasRegistradas: Ocorrencia[] = [];
   dataAgora: Date = new Date();
   formularioOcorrencia!: FormGroup;
 
@@ -22,8 +24,14 @@ export class OcorrenciasComponent {
 
   ngOnInit(): void {
     this.inicializarFormulario();
+    this.buscarOcorrencias();
   }
 
+  private buscarOcorrencias(): void {
+    this.ocorrenciaService.getAllOcorrencias().subscribe((ocorrencias) => {
+      this.ocorrenciasRegistradas = ocorrencias;
+    });
+  }
 
   private inicializarFormulario(): void {
   const dataFormatada = formatDate(this.dataAgora, 'yyyy-MM-ddTHH:mm:ss', 'en-US');
@@ -38,7 +46,8 @@ export class OcorrenciasComponent {
   EnviarFormularioOcorrencia(): void {
     const ocorrencia: Ocorrencia = this.formularioOcorrencia.value;
     this.ocorrenciaService.createOcorrencia(ocorrencia, ocorrencia.moradorId).subscribe((res) => {
-      console.log("Registrada com sucesso!");
+      this.ocorrenciaFinalizada = true;
+      this.buscarOcorrencias();
     });
   }
 

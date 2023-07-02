@@ -19,7 +19,7 @@ export class OcorrenciaService {
   constructor(private http: HttpClient) { }
 
   getAllOcorrencias(): Observable<Ocorrencia[]> {
-    return this.http.get<Ocorrencia[]>(`${this.url}Ocorrencia/Ocorrencias`);
+    return this.http.get<Ocorrencia[]>(`${this.url}Ocorrencias`);
   }
 
   getOcorrenciaById(id: number): Observable<Ocorrencia> {
