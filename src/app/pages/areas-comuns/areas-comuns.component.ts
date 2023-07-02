@@ -74,6 +74,7 @@ export class AreasComunsComponent {
 
     EnviarFormularioReserva(): void {
       const reserva: Reserva = this.formularioReserva.value;
+      
       if (reserva.espacoComum) {
         reserva.espacoComum = reserva.espacoComum.toLowerCase();
       }

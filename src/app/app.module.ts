@@ -31,6 +31,7 @@ import { MoradorService } from './services/morador.service';
 import { ModalService } from './services/modal.service';
 import { ContasService } from './services/contas.service';
 import { ReservaService } from './services/reserva.service';
+import { OcorrenciaService } from './services/ocorrencia.service';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { ReservaService } from './services/reserva.service';
     MoradorService,
     ModalService,
     ContasService,
-    ReservaService
+    ReservaService,
+    OcorrenciaService
   ],
   bootstrap: [AppComponent]
 })

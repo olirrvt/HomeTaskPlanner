@@ -1,1 +1,32 @@
-<p>ocorrencias works!</p>
+<div class="container-ocorrencia">
+    <form class="ocorrencia-form" [formGroup]="formularioOcorrencia" (ngSubmit)="EnviarFormularioOcorrencia()">
+      <h2>Registro de Ocorrência</h2>
+      
+      <div class="form-group">
+        <label for="moradorId">ID do Morador:</label>
+        <input 
+        type="number" 
+        id="moradorId" 
+        class="form-control" 
+        name="moradorId"
+        formControlName="moradorId" 
+        required>
+      </div>
+  
+      <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <textarea 
+        id="descricao" 
+        class="form-control" 
+        rows="4" 
+        name="descricao"
+        formControlName="descricao" 
+        required></textarea>
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" class="btn-submit">Registrar Ocorrência</button>
+      </div>
+    </form>
+  </div>
+  
