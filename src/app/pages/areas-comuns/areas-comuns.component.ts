@@ -12,6 +12,7 @@ import { ReservaService } from 'src/app/services/reserva.service';
 export class AreasComunsComponent {
 
   formularioReserva!: FormGroup;
+  reservasDisponiveis: Reserva[] = [];
   
   constructor (
     private reservaService: ReservaService,
@@ -21,7 +22,14 @@ export class AreasComunsComponent {
 
     ngOnInit(): void {
       this.inicializarFormularioReserva();
+      this.buscarReservasDisponiveis();
     };
+
+    private buscarReservasDisponiveis(): void {
+      this.reservaService.getAllReservas().subscribe((reservas) => {
+        this.reservasDisponiveis = reservas;
+      });
+    }
 
     private inicializarFormularioReserva(): void {
       this.formularioReserva = this.formBuilder.group({
@@ -72,6 +80,8 @@ export class AreasComunsComponent {
       
       this.reservaService.createReserva(reserva.moradorId, reserva).subscribe((res) => {
         this.reservado = true;
+        this.reservaExistente = false;
+        this.reservaInvalida = false;
       });
 
     }
