@@ -31,6 +31,29 @@ export class AreasComunsComponent {
       });
     }
 
+    reservaExistente: boolean = false;
+
+    verificarReserva(): void {
+      const reserva: Reserva = this.formularioReserva.value;
+      this.reservaService.getAllReservas().subscribe((reservas) => {
+        const reservaExistente = reservas.find((r) => {
+          const dataReserva = new Date(reserva.dataHoraReserva);
+          const dataReservaExistente = new Date(r.dataHoraReserva);
+          return (
+            r.espacoComun === reserva.espacoComun &&
+            dataReserva.getMonth() === dataReservaExistente.getMonth() &&
+            dataReserva.getDate() === dataReservaExistente.getDate()
+          );
+        });
+        if (reservaExistente) {
+          this.reservaExistente = true;
+        } else {
+          this.reservaExistente = false;
+          this.EnviarFormularioReserva();
+        }
+      });
+    }
+
     EnviarFormularioReserva(): void {
       const reserva: Reserva = this.formularioReserva.value;
       console.log(reserva);

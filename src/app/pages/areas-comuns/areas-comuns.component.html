@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Criar Reserva</h1>
-    <form class="signup-form" [formGroup]="formularioReserva" (ngSubmit)="EnviarFormularioReserva()">
+    <form class="signup-form" [formGroup]="formularioReserva" (ngSubmit)="verificarReserva()">
       <div class="form-group">
         <label for="moradorId">ID do Morador:</label>
         <input
@@ -18,7 +18,8 @@
         id="dataHoraReserva" 
         name="dataHoraReserva" 
         required
-        formControlName="dataHoraReserva">
+        formControlName="dataHoraReserva"
+        >
       </div>
       <div class="form-group">
         <label for="espacoComum">Espaço Comum:</label>
@@ -30,6 +31,11 @@
         required
         formControlName="espacoComum">
       </div>
-      <button type="submit">Criar Reserva</button>
+      <button 
+      type="submit"
+      >Criar Reserva</button>
+      <span *ngIf="reservaExistente" class="reserva-existe-alert">
+        <strong>Essa data já está reservada, por favor, escolha outra!</strong>
+      </span>
     </form>
   </div>

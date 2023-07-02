@@ -46,3 +46,11 @@
   button:hover {
     background-color: #45a049;
   }  
+
+  .reserva-existe-alert {
+    margin-top: 2em;
+  }
+
+  .reserva-existe-alert strong {
+    color: #d81616;
+  }
