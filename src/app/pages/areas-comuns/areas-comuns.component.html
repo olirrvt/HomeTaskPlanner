@@ -1,4 +1,8 @@
 <div class="container">
+    <div class="success-box" *ngIf="reservado">
+        <i class="fas fa-check-circle"></i>
+        <h3>Reservado com Sucesso!</h3>
+    </div>
     <h1>Criar Reserva</h1>
     <form class="signup-form" [formGroup]="formularioReserva" (ngSubmit)="verificarReserva()">
       <div class="form-group">
@@ -34,8 +38,10 @@
       <button 
       type="submit"
       >Criar Reserva</button>
-      <span *ngIf="reservaExistente" class="reserva-existe-alert">
-        <strong>Essa data já está reservada, por favor, escolha outra!</strong>
+      <span *ngIf="reservaExistente || reservaInvalida" class="error-box">
+        <i class="fas fa-exclamation-circle"></i>
+        <strong *ngIf="reservaExistente">Essa data já está reservada, por favor, escolha outra!</strong>
+        <strong *ngIf="reservaInvalida">Você não pode cadastrar uma data no passado!</strong>
       </span>
     </form>
   </div>

@@ -32,31 +32,48 @@ export class AreasComunsComponent {
     }
 
     reservaExistente: boolean = false;
+    reservaInvalida: boolean = false;
 
     verificarReserva(): void {
       const reserva: Reserva = this.formularioReserva.value;
-      this.reservaService.getAllReservas().subscribe((reservas) => {
-        const reservaExistente = reservas.find((r) => {
-          const dataReserva = new Date(reserva.dataHoraReserva);
-          const dataReservaExistente = new Date(r.dataHoraReserva);
-          return (
-            r.espacoComun === reserva.espacoComun &&
-            dataReserva.getMonth() === dataReservaExistente.getMonth() &&
-            dataReserva.getDate() === dataReservaExistente.getDate()
-          );
-        });
-        if (reservaExistente) {
-          this.reservaExistente = true;
+      if (reserva.dataHoraReserva) {
+        const dataReserva = new Date(reserva.dataHoraReserva);
+        const agora = new Date();
+        if (dataReserva < agora) {
+          this.reservaInvalida = true;
         } else {
-          this.reservaExistente = false;
-          this.EnviarFormularioReserva();
+          this.reservaService.getAllReservas().subscribe((reservas) => {
+            const reservaExistente = reservas.find((r) => {
+              const dataReservaExistente = new Date(r.dataHoraReserva);
+              return (
+                r.espacoComum === reserva.espacoComum &&
+                dataReserva.getMonth() === dataReservaExistente.getMonth() &&
+                dataReserva.getDate() === dataReservaExistente.getDate()
+              );
+            });
+            if (reservaExistente) {
+              this.reservaExistente = true;
+            } else {
+              this.reservaExistente = false;
+              this.EnviarFormularioReserva();
+            }
+          });
         }
-      });
+      }
     }
+
+    reservado: boolean = false;
 
     EnviarFormularioReserva(): void {
       const reserva: Reserva = this.formularioReserva.value;
-      console.log(reserva);
+      if (reserva.espacoComum) {
+        reserva.espacoComum = reserva.espacoComum.toLowerCase();
+      }
+      
+      this.reservaService.createReserva(reserva.moradorId, reserva).subscribe((res) => {
+        this.reservado = true;
+      });
+
     }
 
 }
