@@ -1,4 +1,5 @@
 import { Conta } from "./Conta";
+import { Reserva } from "./Reserva";
 
 export class Morador {
     moradorId: number = 0;
@@ -8,4 +9,5 @@ export class Morador {
     senha: string = '';
     isAdministrador: boolean = false;
     contas: Conta[] = [];
+    reservas: Reserva[] = [];
 }

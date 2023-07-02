@@ -1,6 +1,6 @@
 .mural {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
@@ -26,6 +26,11 @@
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
+
+  .area-valor span {
+    color: #0faf32;
+    font-weight: bold;
+  }
   
   .card-header {
     font-size: 20px;
@@ -34,6 +39,16 @@
   
   .card-body {
     margin-top: 10px;
+  }
+
+  .status-conta-pago span {
+    color: #218838;
+    font-weight: bolder;
+  }
+
+  .status-conta-pendente span {
+    color: #b31616;
+    font-weight: bolder;
   }
   
   .btn-pagar,

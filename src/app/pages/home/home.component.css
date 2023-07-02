@@ -15,14 +15,14 @@
     font-family: 'Dancing Script', cursive;
     font-size: 10em;
     color: #fff;
-    margin: 0; /* Para remover a margem padrão dos elementos h3 */
+    margin: 0; 
 }
 
 .container-titulo h1 {
     font-family: 'Dancing Script', cursive;
     font-size: 10em;
     color: #fff;
-    margin: 0; /* Para remover a margem padrão dos elementos h1 */
+    margin: 0;
 }
 
 .container-cardhome {

@@ -30,6 +30,7 @@ import { CommonModule } from '@angular/common';
 import { MoradorService } from './services/morador.service';
 import { ModalService } from './services/modal.service';
 import { ContasService } from './services/contas.service';
+import { ReservaService } from './services/reserva.service';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { ContasService } from './services/contas.service';
     HttpClientModule, 
     MoradorService,
     ModalService,
-    ContasService
+    ContasService,
+    ReservaService
   ],
   bootstrap: [AppComponent]
 })
