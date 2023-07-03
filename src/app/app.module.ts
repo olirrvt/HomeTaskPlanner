@@ -17,6 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { HomeButtonComponent } from './components/home-button/home-button.component';
 import { CardComponent } from './components/card/card.component';
+import { HeaderLogadoComponent } from './components/header-logado/header-logado.component';
 
 // FontAwesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -49,7 +50,8 @@ import { OcorrenciaService } from './services/Ocorrencia/ocorrencia.service';
     FooterComponent,
     ModalComponent,
     HomeButtonComponent,
-    CardComponent
+    CardComponent,
+    HeaderLogadoComponent
   ],
   imports: [
     BrowserModule,
