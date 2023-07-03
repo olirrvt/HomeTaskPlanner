@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Ocorrencia } from 'src/app/models/Ocorrencia';
-import { MoradorService } from 'src/app/services/morador.service';
-import { OcorrenciaService } from 'src/app/services/ocorrencia.service';
+import { MoradorService } from 'src/app/services/Morador/morador.service';
+import { OcorrenciaService } from 'src/app/services/Ocorrencia/ocorrencia.service';
 import { formatDate } from '@angular/common';
 
 @Component({

@@ -2,8 +2,8 @@ import { formatDate } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Visitante } from 'src/app/models/Visitante';
-import { MoradorService } from 'src/app/services/morador.service';
-import { VisitanteService } from 'src/app/services/visitante.service';
+import { MoradorService } from 'src/app/services/Morador/morador.service';
+import { VisitanteService } from 'src/app/services/Visitantes/visitante.service';
 
 @Component({
   selector: 'app-visitantes',

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Reserva } from 'src/app/models/Reserva';
-import { MoradorService } from 'src/app/services/morador.service';
-import { ReservaService } from 'src/app/services/reserva.service';
+import { MoradorService } from 'src/app/services/Morador/morador.service';
+import { ReservaService } from 'src/app/services/Reserva/reserva.service';
 
 @Component({
   selector: 'app-areas-comuns',

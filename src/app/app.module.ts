@@ -27,11 +27,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 // Services
-import { MoradorService } from './services/morador.service';
-import { ModalService } from './services/modal.service';
-import { ContasService } from './services/contas.service';
-import { ReservaService } from './services/reserva.service';
-import { OcorrenciaService } from './services/ocorrencia.service';
+import { MoradorService } from './services/Morador/morador.service';
+import { ModalService } from './services/Modal/modal.service';
+import { ContasService } from './services/Contas/contas.service';
+import { ReservaService } from './services/Reserva/reserva.service';
+import { OcorrenciaService } from './services/Ocorrencia/ocorrencia.service';
 
 
 @NgModule({

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Ocorrencia } from '../models/Ocorrencia';
+import { Ocorrencia } from '../../models/Ocorrencia';
 import { Observable } from 'rxjs';
-import { Morador } from '../models/Morador';
+import { Morador } from '../../models/Morador';
 
 const httpOptions = {
   headers: new HttpHeaders({

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Morador } from 'src/app/models/Morador';
-import { MoradorService } from 'src/app/services/morador.service';
-import { ModalService } from 'src/app/services/modal.service';
+import { MoradorService } from 'src/app/services/Morador/morador.service';
+import { ModalService } from 'src/app/services/Modal/modal.service';
 
 @Component({
   selector: 'app-cadastrar',

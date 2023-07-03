@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContasService } from 'src/app/services/contas.service';
+import { ContasService } from 'src/app/services/Contas/contas.service';
 import { Conta } from 'src/app/models/Conta';
 
 @Component({
