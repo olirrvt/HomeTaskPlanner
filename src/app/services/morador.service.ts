@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Morador } from '../models/Morador';
+import { Login } from '../models/Login';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -29,8 +30,13 @@ export class MoradorService {
   }
 
   postMorador(morador: Morador): Observable<any> {
-    const apiUrl = `${this.url}/Morador`;
+    const apiUrl = `${this.url}/Morador/Create`;
     return this.http.post(apiUrl, morador, httpOptions);
+  }
+
+  loginMorador(login: Login): Observable<any> {
+    const apiUrl = `${this.url}/Morador/Login`;
+    return this.http.post(apiUrl, login, httpOptions);
   }
 
   UpdateMorador(morador: Morador): Observable<any> {
