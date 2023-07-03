@@ -1,0 +1,50 @@
+.aviso-mural-container {
+    max-width: 75%;
+    margin: 20em auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .aviso-card {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease; /* Adiciona animação de transição */
+  }
+  
+  .aviso-card h3 {
+    color: #333;
+  }
+  
+  .aviso-card p {
+    color: #777;
+  }
+  
+  /* Adiciona o efeito de levantar o card ao passar o mouse */
+  .aviso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Adiciona uma animação sutil para o texto */
+  .aviso-card h3, .aviso-card p {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
