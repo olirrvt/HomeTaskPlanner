@@ -40,10 +40,12 @@ export class LoginComponent {
       if (response && response.token) {
 
         this.cookieService.set('token', response.token);
+
         this.authService.getMoradorLogado().subscribe(morador => {
           this.moradorLogado = morador;
           console.log(morador);
         })
+        
         this.authService.estaLogadoSubject.next(true);
         this.router.navigate(['/']);
 

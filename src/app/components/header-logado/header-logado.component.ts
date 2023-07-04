@@ -22,19 +22,16 @@ export class HeaderLogadoComponent implements OnInit, OnDestroy {
     this.subscription = this.authService.estaLogado$.subscribe(
       estaLogado => {
         this.estaLogado = estaLogado;
+  
+          this.authService.getMoradorLogado().subscribe(morador => {
+            this.moradorLogado = morador;
+  
+            this.bloco = morador.apartamento.slice(0, 2);
+            this.numeroApartamento = morador.apartamento.slice(2, 3);
+          });
+
       }
     );
-
-    if (this.estaLogado) {
-      this.authService.getMoradorLogado().subscribe(morador => {
-        this.moradorLogado = morador;
-
-        this.bloco = morador.apartamento.slice(0, 2);
-        this.numeroApartamento = morador.apartamento.slice(2, 3);
-
-      });
-    }
-
   }
 
   ngOnDestroy(): void {
