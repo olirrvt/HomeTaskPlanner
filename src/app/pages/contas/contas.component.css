@@ -1,3 +1,13 @@
+.conteudo-contas {
+  max-width: 85%;
+  width: 80%;
+  margin: 17em auto;
+  border-radius: 5px;
+  padding: 0.5em;
+  background-color: #fff;
+  box-shadow: 0 0 9px 0px rgb(252, 249, 249);
+}
+
 .mural {
     position: absolute;
     top: 45%;

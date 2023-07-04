@@ -1,54 +1,56 @@
-<section class="registro-ocorrencia">
-    <div class="container-ocorrencia">
-        <form class="ocorrencia-form" [formGroup]="formularioOcorrencia" (ngSubmit)="EnviarFormularioOcorrencia()">
-          <h2>Registro de Ocorrência</h2>
-          
-          <div class="form-group">
-            <label for="moradorId">ID do Morador:</label>
-            <input 
-            type="number" 
-            id="moradorId" 
-            class="form-control" 
-            name="moradorId"
-            formControlName="moradorId" 
-            required>
-          </div>
-      
-          <div class="form-group">
-            <label for="descricao">Descrição:</label>
-            <textarea 
-            id="descricao" 
-            class="form-control" 
-            rows="4" 
-            name="descricao"
-            formControlName="descricao" 
-            required></textarea>
-          </div>
-      
-          <div class="form-group">
-            <button type="submit" class="btn-submit">Registrar Ocorrência</button>
-          </div>
-
-          <span *ngIf="ocorrenciaFinalizada" class="ocorrencia-finalizada-alert">
-            <i class="fas fa-check"></i>
-            <strong>Ocorrência registrada com sucesso!</strong>
-          </span>
-          
-        </form>
-      </div>
-</section>
-<section class="mural-ocorrencia">
-    <div class="container-mural">
-        <h2>Mural de Ocorrências</h2>
-        <div class="ocorrencias">
-          <div class="ocorrencia" *ngFor="let ocorrencia of ocorrenciasRegistradas">
-            <div class="ocorrencia-header">
-              <span class="ocorrencia-id">ID N°: {{ ocorrencia.id }}</span>
-              <span class="ocorrencia-data">{{ ocorrencia.dataHoraRegistro | date: 'dd/MM/yyyy HH:mm' }}</span>
+<main class="conteudo-ocorrencias">
+  <section class="registro-ocorrencia">
+      <div class="container-ocorrencia">
+          <form class="ocorrencia-form" [formGroup]="formularioOcorrencia" (ngSubmit)="EnviarFormularioOcorrencia()">
+            <h2>Registro de Ocorrência</h2>
+            
+            <div class="form-group">
+              <label for="moradorId">ID do Morador:</label>
+              <input 
+              type="number" 
+              id="moradorId" 
+              class="form-control" 
+              name="moradorId"
+              formControlName="moradorId" 
+              required>
             </div>
-            <div class="ocorrencia-descricao">{{ ocorrencia.descricao }}</div>
-          </div>
+        
+            <div class="form-group">
+              <label for="descricao">Descrição:</label>
+              <textarea 
+              id="descricao" 
+              class="form-control" 
+              rows="4" 
+              name="descricao"
+              formControlName="descricao" 
+              required></textarea>
+            </div>
+        
+            <div class="form-group">
+              <button type="submit" class="btn-submit">Registrar Ocorrência</button>
+            </div>
+  
+            <span *ngIf="ocorrenciaFinalizada" class="ocorrencia-finalizada-alert">
+              <i class="fas fa-check"></i>
+              <strong>Ocorrência registrada com sucesso!</strong>
+            </span>
+            
+          </form>
         </div>
-      </div>      
-</section>
+  </section>
+  <section class="mural-ocorrencia">
+      <div class="container-mural">
+          <h2>Mural de Ocorrências</h2>
+          <div class="ocorrencias">
+            <div class="ocorrencia" *ngFor="let ocorrencia of ocorrenciasRegistradas">
+              <div class="ocorrencia-header">
+                <span class="ocorrencia-id">ID N°: {{ ocorrencia.id }}</span>
+                <span class="ocorrencia-data">{{ ocorrencia.dataHoraRegistro | date: 'dd/MM/yyyy HH:mm' }}</span>
+              </div>
+              <div class="ocorrencia-descricao">{{ ocorrencia.descricao }}</div>
+            </div>
+          </div>
+        </div>      
+  </section>
+</main>
   

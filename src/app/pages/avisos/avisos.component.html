@@ -1,12 +1,16 @@
-<div class="aviso-mural-container">
-    <h1>Lista de Avisos</h1>
-    <div *ngIf="avisos.length === 0; else avisosList">
-      <p>Nenhum aviso cadastrado.</p>
-    </div>
-    <ng-template #avisosList>
-      <div *ngFor="let aviso of avisos" class="aviso-card">
-        <h3>{{ aviso.titulo }}</h3>
-        <p>{{ aviso.mensagem }}</p>
+<main class="conteudo-avisos">
+  <section>
+    <div class="aviso-mural-container">
+        <h1>Lista de Avisos</h1>
+        <div *ngIf="avisos.length === 0; else avisosList">
+          <p>Nenhum aviso cadastrado.</p>
+        </div>
+        <ng-template #avisosList>
+          <div *ngFor="let aviso of avisos" class="aviso-card">
+            <h3>{{ aviso.titulo }}</h3>
+            <p>{{ aviso.mensagem }}</p>
+          </div>
+        </ng-template>
       </div>
-    </ng-template>
-  </div>  
+  </section>
+</main>
