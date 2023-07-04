@@ -80,55 +80,43 @@
     transform: scale(1.05);
   }  
   
-  /* Get de Ocorrencias */
+/* Mural de Ocorrências */
 
-  .mural-ocorrencia {
-    margin-bottom: 10em;
-  }
+.container-mural {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 15em;
+}
 
-  .container-mural {
-    margin: 50px auto;
-    max-width: 80%;
-    padding: 3em;
-    background-color: #f7f7f7; 
-    border-radius: 10px; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ocorrencias {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.ocorrencia {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+
+  /* Adicionar a animação de fade in */
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+/* Definir a animação de fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
+  to {
+    opacity: 1;
   }
-  
-  .ocorrencias {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
-  }
-  
-  .ocorrencia {
-    background-color: #fff; 
-    border: 1px solid #eaeaea;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-    padding: 20px;
-  }
-  
-  .ocorrencia-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  
-  .ocorrencia-id {
-    font-weight: bold;
-  }
-  
-  .ocorrencia-data {
-    color: #888;
-  }
-  
-  .ocorrencia-descricao {
-    padding: 10px;
-    border-top: 1px solid #eaeaea;
-  }  
+}
