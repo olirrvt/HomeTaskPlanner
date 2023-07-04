@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 import { interval } from 'rxjs';
 import { Reserva } from 'src/app/models/Reserva';
 import { AuthService } from 'src/app/services/Auth/auth.service';
@@ -16,6 +17,7 @@ export class AreasComunsComponent {
   reservasDisponiveis: Reserva[] = [];
   reservaMorador: Reserva[] = [];
   moradorNome: string = ""; // Nome do morador logado
+  idMoradorLogado: number = 0; // Id do morador logado
   
   constructor (
     private reservaService: ReservaService,
@@ -24,12 +26,17 @@ export class AreasComunsComponent {
     ) { }
 
     ngOnInit(): void {
-      this.inicializarFormularioReserva();
-      this.buscarReservasDisponiveis();
       this.buscarReservasDoMorador();
+      this.buscarReservasDisponiveis();
+      this.inicializarFormularioReserva();
 
       interval(60000).subscribe(() => {
         this.verificarExpiracaoReservas();
+      });
+
+      interval(20000).subscribe(() => {
+        this.reservaExistente = false;
+        this.reservaInvalida = false;
       });
     };
 
@@ -50,14 +57,22 @@ export class AreasComunsComponent {
 
     private buscarReservasDoMorador(): void {
       this.authService.getMoradorLogado().subscribe(res => {
-        this.moradorNome = res.nome;
+        this.moradorNome = res.nome; // Nome do Morador logado
+
         this.reservaMorador = res.reservas;
       });
     }
 
+    private buscarIdDoMoradorLogado(): number {
+      this.authService.getMoradorLogado().subscribe((res) => {
+        this.idMoradorLogado = res.id;
+      });
+      return this.idMoradorLogado;
+    }
+
     private inicializarFormularioReserva(): void {
       this.formularioReserva = this.formBuilder.group({
-        moradorId: ['', Validators.required],
+        moradorId: this.buscarIdDoMoradorLogado(),
         dataHoraReserva: ['', Validators.required],
         espacoComum: ['', Validators.required]
       });
@@ -98,7 +113,8 @@ export class AreasComunsComponent {
 
     EnviarFormularioReserva(): void {
       const reserva: Reserva = this.formularioReserva.value;
-    
+      reserva.moradorId = this.idMoradorLogado;
+
       if (reserva.espacoComum) {
         reserva.espacoComum = reserva.espacoComum.toLowerCase();
       }

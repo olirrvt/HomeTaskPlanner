@@ -6,7 +6,7 @@ import { Servico } from "./Servico";
 import { Visitante } from "./Visitante";
 
 export class Morador {
-    moradorId: number = 0;
+    id: number = 0;
     nome: string = '';
     apartamento: string = '';
     email: string = '';

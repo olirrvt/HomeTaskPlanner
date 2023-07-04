@@ -48,7 +48,7 @@ export class MoradorService {
   }
 
   UpdateMorador(morador: Morador): Observable<any> {
-    const apiUrl = `${this.url}/${morador.moradorId}`;
+    const apiUrl = `${this.url}/${morador.id}`;
     const httpOptionsWithAuth = this.getHttpOptionsWithAuth();
 
     return this.http.put(apiUrl, morador, httpOptionsWithAuth);

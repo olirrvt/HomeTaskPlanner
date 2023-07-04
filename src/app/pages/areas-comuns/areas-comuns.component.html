@@ -8,16 +8,7 @@
           </div>
           <h1>Criar Reserva</h1>
           <form class="signup-form" [formGroup]="formularioReserva" (ngSubmit)="verificarReserva()">
-            <div class="form-group">
-              <label for="moradorId">ID do Morador:</label>
-              <input
-              type="number"
-              id="moradorId"
-              name="moradorId"
-              placeholder="Ex: 105"
-              required
-              formControlName="moradorId">
-            </div>
+
             <div class="form-group">
               <label for="dataHoraReserva">Data e Hora da Reserva:</label>
               <input 
