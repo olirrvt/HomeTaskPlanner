@@ -1,35 +1,48 @@
-<div class="profile-container">
-
-    <div class="avatar-container">
-      <div class="avatar-circle">{{ morador.nome.charAt(0).toUpperCase() }}</div>
-    </div>
-    <div class="profile-info">
-      <h2>{{ morador.nome }}</h2>
-      <p><strong>Apartamento:</strong> {{ morador.apartamento }}</p>
-      <p><strong>Email:</strong> {{ morador.email }}</p>
-    </div>
-    <div class="profile-actions">
-    </div>
-    
-    <div class="profile-edit-form">
-        <h3>Editar Perfil</h3>
-        <form>
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" value="{{morador.nome}}" required>
-            </div>
-          <div class="form-group">
-              <label for="apartamento">Apartamento:</label>
-              <input type="text" id="apartamento" value="{{ morador.apartamento }}" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" value="{{morador.email}}" required>
-            </div>
-            <!-- Add other fields for editing as needed -->
-            <button type="submit">Salvar Alterações</button>
-        </form>
-      </div>
-
-      <button class="delete-button" (click)="apagarConta()">Apagar Conta</button>
+<div class="profile-container" *ngIf="morador">
+  <div class="avatar-container">
+    <div class="avatar-circle">{{ morador.nome.charAt(0).toUpperCase() }}</div>
   </div>
+  <div class="profile-info">
+    <h2>{{ morador.nome }}</h2>
+    <p><strong>Apartamento:</strong> {{ morador.apartamento }}</p>
+    <p><strong>Email:</strong> {{ morador.email }}</p>
+  </div>
+  <div class="profile-actions"></div>
+
+  <div class="profile-edit-form">
+    <h3>Editar Perfil</h3>
+    <form [formGroup]="formularioEditUser" (submit)="editarPerfil()">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input
+          type="text"
+          id="nome"      
+          formControlName="nome"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="apartamento">Apartamento:</label>
+        <input
+          type="text"
+          id="apartamento"
+          formControlName="apartamento"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          required
+        />
+      </div>
+      <button type="submit">
+        Salvar Alterações
+      </button>
+    </form>
+  </div>
+  <button class="delete-button" (click)="apagarConta()">Apagar Conta</button>
+</div>

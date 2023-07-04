@@ -43,7 +43,6 @@ export class MoradorService {
 
   postMorador(morador: Morador): Observable<any> {
     const apiUrl = `${this.url}/Morador/Create`;
-
     return this.http.post(apiUrl, morador);
   }
 
