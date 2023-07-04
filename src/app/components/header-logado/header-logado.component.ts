@@ -27,7 +27,7 @@ export class HeaderLogadoComponent implements OnInit, OnDestroy {
             this.moradorLogado = morador;
   
             this.bloco = morador.apartamento.slice(0, 2);
-            this.numeroApartamento = morador.apartamento.slice(2, 3);
+            this.numeroApartamento = morador.apartamento.slice(2, 5);
           });
 
       }
