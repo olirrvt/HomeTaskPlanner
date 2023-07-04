@@ -9,6 +9,7 @@ header {
   
   .logo-da-pagina {
     max-width: 19vh;
+    cursor: pointer;
   }
   
   .login-buttons {
