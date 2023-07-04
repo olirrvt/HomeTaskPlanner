@@ -1,4 +1,4 @@
-import { Conta } from "./Conta";
+import { Contas } from "./Conta";
 import { Ocorrencia } from "./Ocorrencia";
 import { Produto } from "./Produto";
 import { Reserva } from "./Reserva";
@@ -12,17 +12,10 @@ export class Morador {
     email: string = '';
     senha: string = '';
     isAdministrador: boolean = false;
-    contas: Conta[] = [];
+    conta: Contas[] = [];
     ocorrencia: Ocorrencia[] = [];
-    produto: Produto[] = [];
+    produtos: Produto[] = [];
     reservas: Reserva[] = [];
     servicos: Servico[] = [];
     visitantes: Visitante[] = [];
 }
-
-// .Include(c => c.Conta)
-// .Include(o => o.Ocorrencia)
-// .Include(p => p.Produtos)
-// .Include(r => r.Reservas)
-// .Include(s => s.Servicos)
-// .Include(v => v.Visitantes)

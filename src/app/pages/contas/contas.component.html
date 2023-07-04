@@ -1,7 +1,7 @@
   <section>
     <div class="mural">
       <div class="card-list">
-        <div *ngFor="let conta of contas" class="card">
+        <div *ngFor="let conta of contasMorador" class="card">
           <div class="card-header">
             Data de Vencimento {{ conta.dataVencimento | date }}
             <p>ID da conta: {{ conta.id }}</p>

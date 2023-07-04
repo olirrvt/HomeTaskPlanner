@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContasService } from 'src/app/services/Contas/contas.service';
-import { Conta } from 'src/app/models/Conta';
+import { Contas } from 'src/app/models/Conta';
+import { AuthService } from 'src/app/services/Auth/auth.service';
 
 @Component({
   selector: 'app-contas',
@@ -9,22 +10,29 @@ import { Conta } from 'src/app/models/Conta';
 })
 export class ContasComponent {
 
-  contas: Conta[] = [];
+  contasMorador: Contas[] = [];
 
-  constructor (private contasService: ContasService) {}
+  constructor (
+    private contasService: ContasService,
+    private authService: AuthService
+    ) { }
 
   ngOnInit() {
     this.carregarContasPendentes();
   }
 
   carregarContasPendentes() {
-    this.contasService.getAllContas().subscribe((contas) => {
-      console.log(contas.map((c) => c.status));
-      this.contas = contas;
+    this.authService.getMoradorLogado().subscribe(morador => {
+      if (morador && morador.conta) {
+        this.contasMorador = morador.conta;
+      } else {
+        console.log('O morador não possui conta associadas a ele!');
+      }
     });
-  }
+  } 
+  
 
-  pagarConta(conta: Conta) {
+  pagarConta(conta: Contas) {
     conta.status = "Paga";
     console.log(conta.id);
     this.contasService.pagarConta(conta).subscribe(() => {
