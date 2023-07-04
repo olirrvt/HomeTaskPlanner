@@ -1,27 +1,96 @@
-# HomeTaskPlannerUI
+# Home Tasker Planner 🏙
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+Bem-vindo à aplicação de gerenciamento de condomínio baseada em Angular! Esta aplicação permite que moradores tenham controle sobre suas contas, reservem áreas comuns, recebam avisos do condomínio, realizem login e cadastro, registrem ocorrências, cadastrem visitantes e registrem a hora de saída deles.
 
-## Development server
+## View da Tela Principal
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![image](https://github.com/olirrvt/HomeTaskPlanner/assets/100844800/18e6c207-c565-4d93-b3a0-1f103d1a1646)
 
-## Code scaffolding
+## Instalação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Certifique-se de ter o Node.js instalado em sua máquina. Caso não tenha, faça o download em https://nodejs.org/ e siga as instruções de instalação.
 
-## Build
+2. Clone este repositório em sua máquina local:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+git clone https://github.com/olirrvt/HomeTaskPlanner.git
 
-## Running unit tests
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Navegue para o diretório da aplicação:
+   
+```
+cd hometaskplanner
+```
 
-## Running end-to-end tests
+4. Instale as dependências necessárias:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+npm install
+```
 
-## Further help
+## Configuração
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Antes de executar a aplicação, é necessário configurar o backend. Certifique-se de ter o servidor e o banco de dados configurados corretamente.
+Você tem que ter a API dele que eu mesmo desenvolvi. (https://github.com/olirrvt/HomeTaskAPI)
+
+
+## Executando a aplicação
+
+1. Após a configuração, inicie a aplicação:
+
+```
+ng serve
+```
+
+2. Acesse a aplicação no seu navegador, digitando o seguinte endereço na barra de URL:
+
+```
+http://localhost:4200/
+```
+
+## Funcionalidades da Aplicação
+
+### Login e Cadastro
+
+- Na página inicial, os usuários podem fazer login com suas credenciais ou criar uma nova conta se ainda não tiverem uma.
+- As informações de login e cadastro são validadas antes do envio ao servidor.
+- Tecnologia usadas para o Login: JWT.
+
+### Gerenciamento de Contas
+
+- Os moradores têm acesso a informações das suas contas do condomínio, não é possível realizar o pagamento, apenas uma notificação.
+
+### Reserva de Áreas Comuns
+
+- Os moradores podem visualizar as áreas comuns disponíveis para reserva, bem como a disponibilidade de cada uma.
+- A reserva é feita selecionando a data e o horário desejados e, em seguida, confirmando a reserva.
+
+### Avisos do Condomínio
+
+- Os moradores recebem avisos e notificações importantes do condomínio na página de avisos.
+- Novos avisos são exibidos para os moradores assim que forem publicados pelo administrador.
+
+### Registro de Ocorrências
+
+- Os moradores podem registrar ocorrências ou problemas no condomínio através de um formulário.
+- As ocorrências são enviadas ao administrador para análise e resolução.
+
+### Cadastro de Visitantes
+
+- Os moradores têm a opção de cadastrar visitantes e informar a duração da visita.
+- O registro de saída do visitante também é registrado na aplicação.
+
+## Contribuição
+
+Se você deseja contribuir para a melhoria desta aplicação, sinta-se à vontade para abrir um pull request ou reportar problemas através das issues.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo
+
+ LICENSE para obter mais detalhes.
+
+---
+
+Esperamos que esta aplicação de gerenciamento de condomínio baseada em Angular atenda às suas necessidades. Se tiver alguma dúvida ou sugestão, não hesite em entrar em contato. Aproveite o uso da aplicação!
