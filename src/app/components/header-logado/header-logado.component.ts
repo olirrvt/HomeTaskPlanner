@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/Auth/auth.service';
 import { Subscription } from 'rxjs';
+import { Morador } from 'src/app/models/Morador';
 
 @Component({
   selector: 'app-header-logado',
@@ -9,8 +10,11 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./header-logado.component.css']
 })
 export class HeaderLogadoComponent implements OnInit, OnDestroy {
-  estaLogado: boolean = false;
   private subscription!: Subscription;
+  estaLogado: boolean = false;
+  moradorLogado: Morador | undefined;
+  bloco: string | undefined;
+  numeroApartamento: string | undefined;
 
   constructor (private authService: AuthService, private router: Router) { }
 
@@ -20,6 +24,17 @@ export class HeaderLogadoComponent implements OnInit, OnDestroy {
         this.estaLogado = estaLogado;
       }
     );
+
+    if (this.estaLogado) {
+      this.authService.getMoradorLogado().subscribe(morador => {
+        this.moradorLogado = morador;
+
+        this.bloco = morador.apartamento.slice(0, 2);
+        this.numeroApartamento = morador.apartamento.slice(2, 3);
+
+      });
+    }
+
   }
 
   ngOnDestroy(): void {

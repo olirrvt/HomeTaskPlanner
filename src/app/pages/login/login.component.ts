@@ -35,7 +35,6 @@ export class LoginComponent {
 
   EfetuarLogin(): void {
     const login: Login = this.formularioLogin.value;
-    console.log(login);
 
     this.authService.login(login).subscribe((response) => {
       if (response && response.token) {

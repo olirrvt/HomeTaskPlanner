@@ -14,8 +14,11 @@
     <div class="login-buttons">
       <!-- Mostrar informações do morador logado -->
       <span class="user-info">
-        <span class="user-name">Nome do Morador</span>
-        <span class="user-apartment">Apartamento: 10304</span>
+        <span class="user-name">{{ moradorLogado?.nome }}</span>
+        <span class="user-apartment">
+          <strong>Bloco: {{bloco}}</strong> <br>
+          <strong>Apartamento: {{numeroApartamento}}</strong>
+        </span>
       </span>
       <!-- Botão para deslogar ou acessar perfil -->
       <a class="profile-button" routerLink="/perfil">Perfil</a>
