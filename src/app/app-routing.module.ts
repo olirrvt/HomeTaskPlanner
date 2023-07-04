@@ -8,6 +8,7 @@ import { AreasComunsComponent } from './pages/areas-comuns/areas-comuns.componen
 import { AvisosComponent } from './pages/avisos/avisos.component';
 import { OcorrenciasComponent } from './pages/ocorrencias/ocorrencias.component';
 import { VisitantesComponent } from './pages/visitantes/visitantes.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 const routes: Routes = [
     { path: "", component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: "avisos", component: AvisosComponent },
     { path: "ocorrencias", component: OcorrenciasComponent },
     { path: "visitantes", component: VisitantesComponent },
+    { path: "perfil", component: PerfilComponent }
 ];
 
 @NgModule({

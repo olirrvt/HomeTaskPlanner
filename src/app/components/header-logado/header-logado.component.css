@@ -81,8 +81,27 @@ header {
   gap: 5%;
 }
 
+.user-initial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #2e2b2b;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 450ms;
+}
 
-.profile-button,
+.user-initial:hover {
+  background-color: #444040;
+  transition: all 450ms;
+}
+
 .logout-button {
   display: inline-block;
   padding: 10px 20px;
@@ -100,22 +119,10 @@ header {
   border: none;
 }
 
-.profile-button {
-  background-color: #2e2b2b;
-  color: #fff;
-  border: none;
-}
-
-.profile-button:hover,
 .logout-button:hover {
   background-color: #848688;
 }
 
 .logout-button:hover {
   background-color: #a32929;
-}
-
-.profile-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }

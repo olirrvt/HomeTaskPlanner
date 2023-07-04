@@ -5,14 +5,17 @@
   <nav>
     <ul class="navbar-menu">
       <li><a routerLink="/contas">Contas</a></li>
-      <li><a routerLink="/areas-comuns">Áreas Comuns</a></li>
+      <li><a routerLink="/areas-comuns">Reservas</a></li>
       <li><a routerLink="/ocorrencias">Ocorrências</a></li>
       <li><a routerLink="/avisos">Avisos</a></li>
-      <li><a routerLink="/visitantes">Cadastrar Visitantes</a></li>
+      <li><a routerLink="/visitantes">Visitantes</a></li>
     </ul>
   </nav>
   <div class="user-profile">
     <!-- Mostrar informações do morador logado -->
+    <div routerLink="/perfil" class="user-initial">
+      {{ moradorLogado?.nome?.[0] }}
+    </div>
     <div class="user-info">
       <span class="user-name">{{ moradorLogado?.nome }}</span>
       <span class="user-apartment">
@@ -21,7 +24,6 @@
     </div>
     <!-- Botão para deslogar ou acessar perfil -->
     <div class="profile-buttons">
-      <a class="profile-button" routerLink="/perfil">Perfil</a>
       <button class="logout-button" (click)="deslogar()">Sair</button>
     </div>
   </div>
