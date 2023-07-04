@@ -1,11 +1,11 @@
 .conteudo-reservas {
   max-width: 85%;
   width: 80%;
-  margin: 17em auto;
+  margin: 20em auto;
   border-radius: 5px;
   padding: 0.5em;
   background-color: #fff;
-  box-shadow: 0 0 15px rgb(252, 249, 249); /* Adiciona uma sombra para parecer um campo flutuante */
+  box-shadow: 0 0 9px 0px rgb(252, 249, 249);
 }
 
 .container {
