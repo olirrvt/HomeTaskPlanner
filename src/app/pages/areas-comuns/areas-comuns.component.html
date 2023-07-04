@@ -1,4 +1,5 @@
 <main class="conteudo-reservas">
+
   <section class="section-formulario">
       <div class="container">
           <div class="success-box" *ngIf="reservado">
@@ -48,17 +49,33 @@
           </form>
         </div>
   </section>
+
+  <section class="section-reserva-morador" *ngIf="reservaMorador">
+    <h2>Suas Reservas</h2>
+    <div *ngFor="let reservaMorador of reservaMorador" class="reserva-morador-info">
+      <div class="reserva">
+        <div class="reserva-info">
+          <h3>Nome do Morador: {{ moradorNome }}</h3>
+          <p class="data-reserva">Data da Reserva: {{ reservaMorador.dataHoraReserva | date:'dd/MM/yyyy' }}</p>
+          <p class="espaco-comum">Espaço Comum: {{ reservaMorador.espacoComum | titlecase }}</p>
+          <button class="botao-apagar-reserva" (click)="apagarReserva(reservaMorador.id)">Apagar reserva</button>
+
+        </div>
+      </div>
+    </div>
+  </section>  
   
   <section class="section-reservas">
       <div class="reservas-mural">
         <h2>Reservas Feitas</h2>
         <div class="reserva" *ngFor="let reserva of reservasDisponiveis">
           <div class="reserva-info">
-            <h3>ID do Morador: {{ reserva.moradorId }}</h3>
+            <h3>N° de identificação: {{ reserva.id }}</h3>
             <p class="data-reserva">Data da Reserva: {{ reserva.dataHoraReserva | date:'dd/MM/yyyy' }}</p>
             <p class="espaco-comum">Espaço Comum: {{ reserva.espacoComum | titlecase }}</p>
           </div>
         </div>
       </div>
-  </section>
+    </section>
+
 </main>

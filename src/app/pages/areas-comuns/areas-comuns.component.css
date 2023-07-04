@@ -139,7 +139,6 @@ p {
   color: #666;
 }
 
-/* Mural shine effect */
 .reservas-mural::before {
   content: "";
   position: absolute;
@@ -153,4 +152,81 @@ p {
   border-radius: 10px;
 }
 
+/* Reserva de moradores */
+
+.section-reserva-morador {
+  padding: 20px;
+  margin-bottom: 5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.reserva-morador-info {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: auto;
+  width: 80%;
+}
+
+.reserva-morador-info h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.section-reserva-morador .reserva {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.section-reserva-morador .reserva:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reserva-morador-info .reserva-info {
+  padding: 10px;
+}
+
+.reserva-morador-info h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.reserva-morador-info .espaco-comum {
+  font-weight: 500;
+}
+
+.reserva-morador-info .data-reserva {
+  font-weight: 500;
+}
+
+.reserva-morador-info p {
+  margin: 0;
+  color: #666;
+}
+
+.botao-apagar-reserva {
+  padding: 8px 16px;
+  margin-top: 1em;
+  background-color: #ff0000; 
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.botao-apagar-reserva:hover {
+  background-color: #661c1c;
+}
 
