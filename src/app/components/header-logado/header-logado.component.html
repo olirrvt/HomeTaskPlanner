@@ -1,27 +1,28 @@
 <header>
-    <div>
-      <img class="logo-da-pagina" routerLink="/" src="../../../assets/img/logo-predio.png" alt="lista-de-tarefas">
-    </div>
-    <nav>
-      <ul class="navbar-menu">
-        <li><a routerLink="/contas">Contas Pendentes</a></li>
-        <li><a routerLink="/areas-comuns">Áreas Comuns</a></li>
-        <li><a routerLink="/ocorrencias">Ocorrências</a></li>
-        <li><a routerLink="/avisos">Avisos</a></li>
-        <li><a routerLink="/visitantes">Cadastrar Visitantes</a></li>
-      </ul>
-    </nav>
-    <div class="login-buttons">
-      <!-- Mostrar informações do morador logado -->
-      <span class="user-info">
-        <span class="user-name">{{ moradorLogado?.nome }}</span>
-        <span class="user-apartment">
-          <strong>Bloco: {{bloco}}</strong> <br>
-          <strong>Apartamento: {{numeroApartamento}}</strong>
-        </span>
+  <div>
+    <img class="logo-da-pagina" routerLink="/" src="../../../assets/img/logo-predio.png" alt="lista-de-tarefas">
+  </div>
+  <nav>
+    <ul class="navbar-menu">
+      <li><a routerLink="/contas">Contas Pendentes</a></li>
+      <li><a routerLink="/areas-comuns">Áreas Comuns</a></li>
+      <li><a routerLink="/ocorrencias">Ocorrências</a></li>
+      <li><a routerLink="/avisos">Avisos</a></li>
+      <li><a routerLink="/visitantes">Cadastrar Visitantes</a></li>
+    </ul>
+  </nav>
+  <div class="user-profile">
+    <!-- Mostrar informações do morador logado -->
+    <div class="user-info">
+      <span class="user-name">{{ moradorLogado?.nome }}</span>
+      <span class="user-apartment">
+        <strong>Bloco:</strong> {{bloco}} | <strong>Apartamento:</strong> {{numeroApartamento}}
       </span>
-      <!-- Botão para deslogar ou acessar perfil -->
-      <a class="profile-button" routerLink="/perfil">Perfil</a>
-      <a class="logout-button" (click)="deslogar()">Sair</a>
     </div>
-</header>  
+    <!-- Botão para deslogar ou acessar perfil -->
+    <div class="profile-buttons">
+      <a class="profile-button" routerLink="/perfil">Perfil</a>
+      <button class="logout-button" (click)="deslogar()">Sair</button>
+    </div>
+  </div>
+</header>
