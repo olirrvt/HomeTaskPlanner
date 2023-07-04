@@ -62,6 +62,11 @@
 
 /* Mural de Visitantes */
 
+.visitantes-do-morador h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
 .visitante-mural-container {
   max-width: 600px;
   margin: 0 auto;
@@ -107,3 +112,27 @@ h2 {
   }
 }
   
+    /* Estilos padrão para o botão */
+    .deletar-visitante {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #e40606; /* Cor de fundo verde */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Estilo ao passar o mouse sobre o botão */
+    .deletar-visitante:hover {
+      background-color: #a11713; /* Cor de fundo verde mais escura */
+    }
+
+    /* Estilo ao clicar no botão */
+    .deletar-visitante:active {
+      background-color: #330606; /* Cor de fundo verde ainda mais escura */
+    }

@@ -4,16 +4,6 @@
         <h2>Cadastrar Visitante</h2>
         <form [formGroup]="formularioVisitante" (ngSubmit)="CadastrarVisitante()">
           <div class="form-group">
-            <label for="moradorId">ID do Morador</label>
-            <input
-              type="number"
-              id="moradorId"
-              name="moradorId"
-              formControlName="moradorId"
-              required
-            />
-          </div>
-          <div class="form-group">
             <label for="nomeVisitante">Nome do Visitante</label>
             <input
               type="text"
@@ -41,16 +31,19 @@
         </form>
       </div>
   </section>
-  <section>
-      <div class="visitante-mural-container">
-          <!-- <h2>Visitantes do Morador ID: {{ moradorId }}</h2> -->
-          <div class="visitante-list">
-              <div *ngFor="let visitante of visitantes" class="visitante-card">
-              <h2>Visitante N° de identificação: {{ visitante.id }}</h2>
-              <h3>{{ visitante.nomeVisitante | titlecase }}</h3>
-              <p>Data e Hora de Saída: {{ visitante.dataHoraSaida }}</p>
-            </div>
+
+  <section class="visitantes-do-morador">
+    <h1>Seus visitantes</h1>
+    <div class="visitante-mural-container">
+        <div class="visitante-list">
+            <div *ngFor="let visitante of visitantesDoMorador" class="visitante-card">
+            <h2>Visitante N° de identificação: {{ visitante.id }}</h2>
+            <h3>{{ visitante.nomeVisitante | titlecase }}</h3>
+            <p>Data e Hora de Saída: {{ visitante.dataHoraSaida }}</p>
+            <button class="deletar-visitante" (click)="apagarVisitante(visitante.id)">Deletar visitante</button>
           </div>
-        </div>      
-  </section>
+        </div>
+      </div>
+</section>
+
 </main>
