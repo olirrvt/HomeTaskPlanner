@@ -83,6 +83,9 @@
 /* Mural de Ocorrências */
 
 .container-mural {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   max-width: 600px;
   margin: 0 auto;
   margin-bottom: 15em;
@@ -91,6 +94,16 @@
 h2 {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.ocorrencia-header {
+  margin-bottom: 1em;
+}
+
+.ocorrencia-descricao {
+  background-color: #f8f1f1;
+  padding: 0.9em;
+  box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.1);;
 }
 
 .ocorrencias {
@@ -105,13 +118,10 @@ h2 {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
-
-  /* Adicionar a animação de fade in */
   animation-name: fadeIn;
   animation-duration: 1s;
 }
 
-/* Definir a animação de fade in */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -119,4 +129,66 @@ h2 {
   to {
     opacity: 1;
   }
+}
+
+/* Mural de Ocorrências do Morador */
+
+.mural-morador-ocorrencia {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 15em;
+}
+
+.mural-morador-ocorrencia h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.mural-morador-ocorrencia .ocorrencias {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.mural-morador-ocorrencia .ocorrencia {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.deletar-ocorrencia {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ec0303;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 2em;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.deletar-ocorrencia:hover {
+  background-color: #a11f1f; 
+}
+
+/* Estilo ao clicar no botão */
+.deletar-ocorrencia:active {
+  background-color: #470f0f; 
 }

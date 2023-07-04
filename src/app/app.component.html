@@ -1,4 +1,6 @@
 <app-header *ngIf="!estaLogado"></app-header>
 <app-header-logado *ngIf="estaLogado"></app-header-logado>
-<router-outlet></router-outlet>
+<div class="conteudo-principal-rota">
+    <router-outlet></router-outlet>
+</div>
 <app-footer></app-footer>

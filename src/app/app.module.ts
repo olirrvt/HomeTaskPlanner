@@ -36,6 +36,7 @@ import { OcorrenciaService } from './services/Ocorrencia/ocorrencia.service';
 import { AvisoService } from './services/Aviso/aviso.service';
 import { AuthService } from './services/Auth/auth.service';
 import { CookieService } from 'ngx-cookie-service';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { CookieService } from 'ngx-cookie-service';
     ModalComponent,
     HomeButtonComponent,
     CardComponent,
-    HeaderLogadoComponent
+    HeaderLogadoComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
