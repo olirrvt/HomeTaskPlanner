@@ -34,6 +34,8 @@ import { ContasService } from './services/Contas/contas.service';
 import { ReservaService } from './services/Reserva/reserva.service';
 import { OcorrenciaService } from './services/Ocorrencia/ocorrencia.service';
 import { AvisoService } from './services/Aviso/aviso.service';
+import { AuthService } from './services/Auth/auth.service';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -63,13 +65,15 @@ import { AvisoService } from './services/Aviso/aviso.service';
     ReactiveFormsModule
   ],
   providers: [
-    HttpClientModule, 
+    HttpClientModule,
+    CookieService,
     MoradorService,
     ModalService,
     ContasService,
     ReservaService,
     OcorrenciaService,
-    AvisoService
+    AvisoService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

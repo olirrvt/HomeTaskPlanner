@@ -1,23 +1,30 @@
 <div class="login-container">
-    <form class="login-form">
-    <!-- (ngSubmit)="login() -->
-        <h2>Login</h2>
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <!-- [(ngModel)]="username" -->
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <!-- [(ngModel)]="password" -->
-      </div>
-      <div class="form-actions">
-        <button type="submit" class="login-button">Logar</button>
-        <a href="#" class="forgot-password">Esqueceu a senha?</a>
-      </div>
-      <div class="signup-link">
-        <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
-      </div>
-    </form>
-  </div>  
+  <form class="login-form" [formGroup]="formularioLogin" (submit)="EfetuarLogin()">
+    <h2>Login</h2>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input 
+      type="text" 
+      id="email-id" 
+      name="email"
+      formControlName="email"
+      required />
+    </div>
+    <div class="form-group">
+      <label for="senha">Senha:</label>
+      <input 
+      type="password" 
+      id="senha-id" 
+      name="senha" 
+      formControlName="senha"
+      required />
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="login-button">Logar</button>
+      <a href="#" class="forgot-password">Esqueceu a senha?</a>
+    </div>
+    <div class="signup-link">
+      <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
+    </div>
+  </form>
+</div>

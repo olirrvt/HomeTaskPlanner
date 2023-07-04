@@ -34,11 +34,6 @@ export class MoradorService {
     return this.http.post(apiUrl, morador, httpOptions);
   }
 
-  loginMorador(login: Login): Observable<any> {
-    const apiUrl = `${this.url}/Morador/Login`;
-    return this.http.post(apiUrl, login, httpOptions);
-  }
-
   UpdateMorador(morador: Morador): Observable<any> {
     const apiUrl = `${this.url}/${morador.moradorId}`;
     return this.http.put(apiUrl, morador, httpOptions);
