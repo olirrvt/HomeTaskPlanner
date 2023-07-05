@@ -6,4 +6,40 @@
             Explore Now
         </app-home-button>
     </div>
-</section>
+
+    <section class="section-user-logado" *ngIf="usuarioLogado">
+        <div class="container-cardhome">
+          <!-- Avisos -->
+          <div class="avisos-container">
+            <div *ngIf="avisosGeral.length > 0" class="mural-avisos">
+              <h2>Avisos:</h2>
+              <div *ngFor="let aviso of avisosGeral" class="aviso-item">
+                <!-- Exibir conteúdo do aviso aqui -->
+                <div><strong>Título:</strong> {{ aviso.titulo }}</div>
+                <div><strong>Mensagem:</strong> {{ aviso.mensagem }}</div>
+                <hr>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Linha que separa as áreas -->
+          <div class="linha-vertical"></div>
+      
+          <!-- Contas -->
+          <div class="contas-container">
+            <div *ngIf="contasMorador.length > 0" class="mural-avisos">
+              <h2>Contas:</h2>
+              <div *ngFor="let conta of contasMorador" class="aviso-item">
+                <!-- Exibir informações da conta aqui -->
+                <div><strong>ID da Conta:</strong> {{ conta.id }}</div>
+                <div><strong>Data de Vencimento:</strong> {{ conta.dataVencimento | date }}</div>
+                <div><strong>Valor:</strong> {{ conta.valor }}</div>
+                <hr>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </section>
+      
+      

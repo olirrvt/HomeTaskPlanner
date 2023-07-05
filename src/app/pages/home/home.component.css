@@ -31,3 +31,60 @@
     flex-wrap: wrap;
     justify-content: center;
   }  
+
+  /* CSS para o mural de avisos */
+
+  .section-user-logado {
+    width: 50%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  
+  .container-cardhome {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 999;
+  }
+  
+  .linha-vertical {
+    width: 2px;
+    height: 100%;
+    background-color: #ddd;
+    margin: 0 20px;
+  }
+
+  .mural-avisos {
+    width: 100%;
+  }
+  
+  .mural-avisos h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .mural-avisos hr {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+  
+  .mural-avisos .aviso-item {
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .mural-avisos .aviso-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .mural-avisos .aviso-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }

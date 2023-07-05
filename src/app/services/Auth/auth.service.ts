@@ -17,7 +17,6 @@ const httpOptions = {
 })
 export class AuthService {
   private api = 'https://localhost:7005/Auth/';
-
   estaLogadoSubject = new BehaviorSubject<boolean>(false);
   estaLogado$ = this.estaLogadoSubject.asObservable();
 
@@ -28,6 +27,10 @@ export class AuthService {
 
     login(login: Login): Observable<any> {
       return this.httpClient.post<any>(this.api + 'Login', login, httpOptions);
+    }
+
+    getToken(): string | null {
+      return this.cookieService.get('token');
     }
 
     getMoradorLogado(): Observable<Morador> {
