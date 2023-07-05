@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin, of, switchMap, toArray } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { Morador } from '../../models/Morador';
 import { Login } from '../../models/Login';
@@ -58,6 +58,39 @@ export class MoradorService {
     const httpOptionsWithAuth = this.getHttpOptionsWithAuth();
 
     return this.http.delete(apiUrl, httpOptionsWithAuth);
+  }
+
+  deleteMoradorAndRelatedItems(id: number): Observable<any> {
+    const apiUrl = `${this.url}/${id}`;
+    const httpOptionsWithAuth = this.getHttpOptionsWithAuth();
+  
+    return this.getById(id).pipe(
+      switchMap((morador: Morador) => {
+        if (!morador) {
+          return of(null);
+        }
+  
+        const idContas = morador.conta.map((m) => m.id);
+        const idOcorrencias = morador.ocorrencia.map((oc) => oc.id);
+        const idVisitantes = morador.visitantes.map((v) => v.id);
+        const idReserva = morador.reservas.map((r) => r.id);
+        const idProdutos = morador.produtos.map((p) => p.id);
+        const idServicos = morador.servicos.map((s) => s.id);
+  
+        return forkJoin([
+          ...idContas.map((i) => this.http.delete(`https://localhost:7005/Contas/ContaApp/${i}/Apagar`, httpOptionsWithAuth)),
+          ...idOcorrencias.map((i) => this.http.delete(`https://localhost:7005/Ocorrencia/Ocorrencia/${i}/Apagar`, httpOptionsWithAuth)),
+          ...idProdutos.map((i) => this.http.delete(`https://localhost:7005/Produto/Produto/${i}/Apagar`, httpOptionsWithAuth)),
+          ...idReserva.map(i => this.http.delete(`https://localhost:7005/Reservas/Reserva/${i}/Apagar`, httpOptionsWithAuth)),
+          ...idVisitantes.map((i) => this.http.delete(`https://localhost:7005/api/Visitantes/Visitante/${i}/Apagar`, httpOptionsWithAuth)),
+          ...idServicos.map((i) => this.http.delete(`https://localhost:7005/api/Servicos/Servico/${i}/Apagar`, httpOptionsWithAuth)),
+          this.http.delete(`${apiUrl}`, httpOptionsWithAuth)
+        ]).pipe(
+          // Utilize o operador toArray para combinar os resultados em um único array
+          toArray()
+        );
+      })
+    );
   }
 
 }

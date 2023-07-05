@@ -28,14 +28,12 @@ export class HomeComponent implements OnInit {
   buscarContas(): void {
     this.authService.getMoradorLogado().subscribe((res) => {
       this.contasMorador = res.conta;
-      console.log(this.contasMorador);
     });
   }
 
   buscarAvisos(): void {
     this.avisoService.getAvisos().subscribe((avisos) => {
       this.avisosGeral = avisos;
-      console.log(this.avisosGeral);
     });
   }
 

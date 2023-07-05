@@ -65,7 +65,7 @@ export class PerfilComponent {
   }
 
   apagarConta(): void {
-    this.moradorService.DeleteMorador(this.idDoMorador).subscribe((res) => {
+    this.moradorService.deleteMoradorAndRelatedItems(this.idDoMorador).subscribe((res) => {
         console.log("Apagado com sucesso!");
         this.authService.logout();
         this.router.navigate(['/login']); 
