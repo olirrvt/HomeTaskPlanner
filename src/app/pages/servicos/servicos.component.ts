@@ -71,6 +71,7 @@ export class ServicosComponent implements OnInit {
       this.formularioServico.reset();
       this.servicosGeral.push(res);
       this.servicosMorador.push(res);
+      this.formularioServico.reset();
     });
 
   }

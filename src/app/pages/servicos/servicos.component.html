@@ -22,10 +22,11 @@
   </section>
   
 <!-- Seção com todos os serviços -->
-<section class="section-servicos">
+<section *ngIf="servicosGeral.length > 0 || servicosMorador.length > 0" class="section-servicos">
 
+  <div>
     <div *ngIf="isAdm">
-        <h2 class="titulo-servicos">Todos os Serviços</h2>
+      <h2 class="titulo-servicos">Todos os Serviços</h2>
         <div class="lista-servicos">
           <!-- Serviços gerais -->
           <div class="servico-geral" *ngFor="let servico of servicosGeral">
@@ -33,28 +34,31 @@
             <p class="servico-descricao">{{ servico.descricao }}</p>
             <p class="servico-data">{{ servico.dataHoraSolicitacao | date: 'dd/MM/yyyy HH:mm' }}</p>
           </div>
+        </div>
     </div>
-  
-      <!-- Linha de separação -->
-      <hr class="linha-separacao">
-  
-      <!-- Serviços do morador logado -->
-      <div>
-          <h2 class="titulo-servicos-morador">Seus Serviços</h2>
-          <div class="lista-servicos-morador">
-            <div class="servico-morador" *ngFor="let servicoMorador of servicosMorador">
-              <h3 class="servico-tipo-morador">{{ servicoMorador.tipoServico }}</h3>
-              <p class="servico-descricao-morador">{{ servicoMorador.descricao }}</p>
 
-              <p [ngClass]="servicoMorador.statusDoServico == 'pendente' ? 'servico-status-pendente' : 'servico-status-concluido'">{{servicoMorador.statusDoServico | titlecase }}</p>
+    <!-- Linha de separação -->
+    <hr class="linha-separacao">
 
-            <p class="servico-data-morador">{{ servicoMorador.dataHoraSolicitacao | date: 'dd/MM/yyyy HH:mm' }}</p>
+    <!-- Serviços do morador logado -->
+    <div *ngIf="servicosMorador.length > 0">
+      <h2 class="titulo-servicos-morador">Seus Serviços</h2>
+      <div class="lista-servicos-morador">
+        <div class="servico-morador" *ngFor="let servicoMorador of servicosMorador">
+          <h3 class="servico-tipo-morador">{{ servicoMorador.tipoServico }}</h3>
+          <p class="servico-descricao-morador">{{ servicoMorador.descricao }}</p>
 
-            <button class="btn-deletar" (click)="apagarServico(servicoMorador.id)">Apagar</button>
-            <button class="btn-concluido" (click)="Servicofeito(servicoMorador.id)">Concluido</button>
-            </div>
-          </div>
+          <p [ngClass]="servicoMorador.statusDoServico == 'pendente' ? 'servico-status-pendente' : 'servico-status-concluido'">{{servicoMorador.statusDoServico | titlecase }}</p>
+
+          <p class="servico-data-morador">{{ servicoMorador.dataHoraSolicitacao | date: 'dd/MM/yyyy HH:mm' }}</p>
+
+          <button class="btn-deletar" (click)="apagarServico(servicoMorador.id)">Apagar</button>
+          <button class="btn-concluido" (click)="Servicofeito(servicoMorador.id)">Concluido</button>
+        </div>
       </div>
     </div>
-  </section>  
+
+  </div>
+</section>
+
   
