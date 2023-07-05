@@ -40,7 +40,6 @@ export class PerfilComponent {
 
   getMoradorLogado(): void {
     this.authService.getMoradorLogado().subscribe((res) => {
-      console.log(res);
       if (res !== null && res !== undefined) {
         this.morador = res;
         this.idDoMorador = this.morador.id;
@@ -60,14 +59,14 @@ export class PerfilComponent {
     moradorEdit.email = moradorEdit.email || this.morador.email;
 
     this.moradorService.UpdateMorador(moradorEdit).subscribe((res) => {
-      console.log("Alterado com sucesso!");
+      console.log("Atualizado com sucesso!");
     });
 
   }
 
   apagarConta(): void {
     this.moradorService.DeleteMorador(this.idDoMorador).subscribe((res) => {
-        console.log('Perfil apagado com sucesso!');
+        console.log("Apagado com sucesso!");
         this.authService.logout();
         this.router.navigate(['/login']); 
       });

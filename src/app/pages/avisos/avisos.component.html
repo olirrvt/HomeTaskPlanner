@@ -1,4 +1,32 @@
 <main class="conteudo-avisos">
+  <section class="conteudo-avisos-form" *ngIf="isAdm">
+    <h1>Cadastrar Avisos</h1>
+    <form class="avisos-form" [formGroup]="formularioAviso" (submit)="criarAviso()">
+      <div class="form-group">
+        <label for="titulo">Titulo do Aviso:</label>
+        <input
+        id="titulo" 
+        class="form-control" 
+        name="titulo"
+        placeholder="Coloque o titulo do aviso..."
+        formControlName="titulo" 
+        required>
+      </div>
+  
+      <div class="form-group">
+        <label for="mensagem">Mensagem do Aviso:</label>
+        <input
+        id="mensagem" 
+        class="form-control" 
+        name="mensagem"
+        placeholder="Coloque o mensagem do aviso..."
+        formControlName="mensagem" 
+        required>
+      </div>
+      <button class="btn-submit" type="submit">Criar aviso</button>
+    </form>
+  </section>
+
   <section>
     <div class="aviso-mural-container">
         <h1>Lista de Avisos</h1>
