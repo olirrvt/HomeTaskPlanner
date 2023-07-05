@@ -1,4 +1,4 @@
-<main class="conteudo-ocorrencias">
+
   <section class="registro-ocorrencia">
       <div class="container-ocorrencia">
           <form class="ocorrencia-form" [formGroup]="formularioOcorrencia" (ngSubmit)="EnviarFormularioOcorrencia()">
@@ -30,7 +30,7 @@
 
   <section class="mural-morador-ocorrencia" *ngIf="ocorrenciasExistem">
     <div class="container-mural">
-      <h2>Minhas Ocorrências</h2>
+      <h2 style="color: #fff;">Minhas Ocorrências</h2>
       <div class="ocorrencias">
         <div class="ocorrencia" *ngFor="let ocorrencia of ocorrenciasDoMorador">
           <div class="ocorrencia-header">
@@ -47,7 +47,7 @@
 
   <section class="mural-ocorrencia">
       <div class="container-mural">
-          <h2>Mural de Ocorrências</h2>
+          <h2 style="color: #fff;">Mural de Ocorrências</h2>
           <div class="ocorrencias">
             <div class="ocorrencia" *ngFor="let ocorrencia of ocorrenciasRegistradas">
               <div class="ocorrencia-header">
@@ -60,5 +60,4 @@
           </div>
         </div>      
   </section>
-</main>
   
