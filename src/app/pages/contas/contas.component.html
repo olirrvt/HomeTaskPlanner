@@ -1,4 +1,4 @@
-  <section>
+  <section *ngIf="contasMorador.length > 0">
     <div class="mural">
       <div class="card-list">
         <div *ngFor="let conta of contasMorador" class="card">
@@ -28,7 +28,7 @@
               [disabled]="conta.status == 'Pago'"
             > Pagar </button>
     
-            <button (click)="deleteConta(conta.id)" class="btn-apagar">
+            <button (click)="conta.id && deleteConta(conta.id)" class="btn-apagar">
               Apagar
             </button>
           </div>

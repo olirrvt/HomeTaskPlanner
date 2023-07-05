@@ -9,8 +9,8 @@ import { AuthService } from 'src/app/services/Auth/auth.service';
   styleUrls: ['./contas.component.css']
 })
 export class ContasComponent {
-
   contasMorador: Contas[] = [];
+  moradorId!: number;
 
   constructor (
     private contasService: ContasService,
@@ -19,6 +19,12 @@ export class ContasComponent {
 
   ngOnInit() {
     this.carregarContasPendentes();
+    setInterval(() => {
+      const hoje = new Date();
+      if (hoje.getDate() === 1) {
+        this.cadastrarConta();
+      }
+    }, 1000 * 60 * 60 * 24);
   }
 
   carregarContasPendentes() {
@@ -29,12 +35,16 @@ export class ContasComponent {
         console.log('O morador não possui conta associadas a ele!');
       }
     });
-  } 
+  }
   
+  obterIdDoMoradorLogado(): void {
+    this.authService.getMoradorLogado().subscribe((res) => {
+      this.moradorId = res.id;
+    });
+  }
 
   pagarConta(conta: Contas) {
     conta.status = "Paga";
-    console.log(conta.id);
     this.contasService.pagarConta(conta).subscribe(() => {
       this.carregarContasPendentes();
     });
@@ -42,6 +52,26 @@ export class ContasComponent {
 
   deleteConta(contaId: number) {
     this.contasService.deleteConta(contaId).subscribe(() =>{
+      this.carregarContasPendentes();
+    });
+  }
+
+  cadastrarConta() {
+    // Obter a data atual
+    const hoje = new Date();
+  
+    // Adicionar 10 dias à data atual
+    hoje.setDate(hoje.getDate() + 10);
+  
+    const novaConta: Contas = {
+      dataVencimento: hoje,
+      valor: 250,
+      status: 'pendente',
+      moradorId: this.moradorId
+    };
+  
+    // Chamar o serviço para cadastrar a nova conta
+    this.contasService.addConta(novaConta).subscribe(() => {
       this.carregarContasPendentes();
     });
   }
