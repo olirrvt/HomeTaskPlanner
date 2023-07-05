@@ -42,5 +42,6 @@ export class HeaderLogadoComponent implements OnInit, OnDestroy {
 
   deslogar(): void {
     this.authService.logout();
+    window.location.reload();
   }
 }
