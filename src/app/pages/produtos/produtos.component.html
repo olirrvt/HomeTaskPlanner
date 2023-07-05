@@ -1,1 +1,47 @@
-<p>produtos works!</p>
+<section>
+    <form [formGroup]="formularioProduto" (ngSubmit)="CadastrarProdutos()">
+        <div class="form-group">
+          <label for="nomeProduto">Nome do Produto</label>
+          <input type="text" id="nomeProduto" formControlName="nomeProduto" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="descricaoProduto">Descrição do Produto</label>
+          <textarea id="descricaoProduto" formControlName="descricaoProduto" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="preco">Preço</label>
+          <input type="number" id="preco" formControlName="preco" class="form-control" required>
+        </div>
+      
+        <button type="submit" class="btn btn-primary">Cadastrar Produto</button>
+    
+        <div *ngIf="showMessage" [ngClass]="{'alert-success': success, 'alert-danger': !success}" class="alert">
+            {{ message }}
+          </div>
+      </form>
+</section>
+
+<section class="section-produtos-morador">
+    <h1 class="titulo-prodMorador">Seus produtos</h1>
+    <div class="mural">
+        <div class="card" *ngFor="let produto of produtosMorador">
+          <h3 class="produto-nome">{{ produto.nomeProduto }}</h3>
+          <p class="produto-descricao">{{ produto.descricaoProduto }}</p>
+          <p class="produto-preco">Preço: R$ {{ produto.preco }}</p>
+
+          <button class="delete-button" (click)="excluirProduto(produto.id)">Excluir Produtos</button>
+        </div>
+      </div>      
+</section>
+
+<section class="section-produtos">
+    <h1 class="titulo-prodMorador">Produtos Disponíveis</h1>
+    <div class="mural">
+      <div class="card" *ngFor="let produto of produtos">
+        <h3 class="produto-nome">{{ produto.nomeProduto }}</h3>
+        <p class="produto-descricao">{{ produto.descricaoProduto }}</p>
+        <p class="produto-preco">Preço: R$ {{ produto.preco }}</p>
+      </div>
+    </div>
+  </section>  
+  

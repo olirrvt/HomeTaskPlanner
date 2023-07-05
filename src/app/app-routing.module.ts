@@ -12,6 +12,8 @@ import { OcorrenciasComponent } from './pages/ocorrencias/ocorrencias.component'
 import { VisitantesComponent } from './pages/visitantes/visitantes.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { AuthGuard } from './services/AuthGuard/auth-guard.service';
+import { ProdutosComponent } from './pages/produtos/produtos.component';
+import { ServicosComponent } from './pages/servicos/servicos.component';
 
 const routes: Routes = [
     { path: "", component: HomeComponent },
@@ -22,7 +24,9 @@ const routes: Routes = [
     { path: "avisos", component: AvisosComponent, canActivate: [AuthGuard] },
     { path: "ocorrencias", component: OcorrenciasComponent, canActivate: [AuthGuard] },
     { path: "visitantes", component: VisitantesComponent, canActivate: [AuthGuard] },
-    { path: "perfil", component: PerfilComponent, canActivate: [AuthGuard] }
+    { path: "perfil", component: PerfilComponent, canActivate: [AuthGuard] },
+    { path: "produtos", component: ProdutosComponent, canActivate: [AuthGuard] },
+    { path: "servicos", component: ServicosComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
