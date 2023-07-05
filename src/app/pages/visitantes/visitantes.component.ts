@@ -14,6 +14,7 @@ import { VisitanteService } from 'src/app/services/Visitantes/visitante.service'
 export class VisitantesComponent {
   visitantes: Visitante[] = [];
   visitantesDoMorador: Visitante[] = [];
+  moradorTemVisitante: boolean = false;
   formularioVisitante!: FormGroup;
   dataAgora: Date = new Date();
   visitanteCadastrado: boolean = false;
@@ -41,7 +42,13 @@ export class VisitantesComponent {
 
   private buscarVisitantesDoMorador(): any {
     this.authService.getMoradorLogado().subscribe((res) => {
-      this.visitantesDoMorador = res.visitantes;
+      if (res.visitantes && res.visitantes.length > 0) {
+        this.moradorTemVisitante = true;
+        this.visitantesDoMorador = res.visitantes;
+      } else {
+        this.moradorTemVisitante = false;
+        this.visitantesDoMorador = [];
+      }
     });
   }
 
@@ -77,7 +84,8 @@ export class VisitantesComponent {
     this.visitanteService.registerVisitante(visitante, visitante.moradorId)
     .subscribe((res) => {
       this.visitanteCadastrado = true;
-      this.pegarVisitantesCadastrados();
+
+      this.buscarVisitantesDoMorador();
 
       this.visitantesDoMorador.push(res);
     });

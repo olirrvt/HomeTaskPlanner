@@ -16,6 +16,7 @@ export class AreasComunsComponent {
 
   reservasDisponiveis: Reserva[] = [];
   reservaMorador: Reserva[] = [];
+  moradorTemReserva: boolean = false;
   moradorNome: string = ""; // Nome do morador logado
   idMoradorLogado: number = 0; // Id do morador logado
   
@@ -58,8 +59,13 @@ export class AreasComunsComponent {
     private buscarReservasDoMorador(): void {
       this.authService.getMoradorLogado().subscribe(res => {
         this.moradorNome = res.nome; // Nome do Morador logado
-
-        this.reservaMorador = res.reservas;
+        if (res.reservas && res.reservas.length > 0) {
+          this.moradorTemReserva = true;
+          this.reservaMorador = res.reservas;
+        } else {
+          this.moradorTemReserva = false;
+          this.reservaMorador = [];
+        }
       });
     }
 
@@ -124,6 +130,8 @@ export class AreasComunsComponent {
         this.reservaExistente = false;
         this.reservaInvalida = false;
     
+        this.buscarReservasDoMorador();
+
         // Adicionar a reserva criada à lista de reservas do morador logado
         this.reservaMorador.push(res);
         // Adicionar a reserva criada à lista de reservas disponíveis
