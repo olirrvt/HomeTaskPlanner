@@ -1,0 +1,206 @@
+.section-servicos {
+    max-width: 500px;
+    margin: 15em auto;
+    padding: 5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .titulo-servicos {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #69c022;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #a8b8a4;
+    cursor: not-allowed;
+  }
+  
+  /* Estilo das mensagens de erro */
+
+  .ng-invalid.ng-touched input[type="text"],
+  .ng-invalid.ng-touched textarea {
+    border-color: #f00;
+  }
+  
+  .error-message {
+    color: #f00;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+/* Estilos para a seção com todos os serviços */
+
+.section-servicos {
+    margin-bottom: 40px;
+  }
+  
+  .titulo-servicos {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .lista-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .servico {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .servico-tipo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .servico-descricao {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .servico-data {
+    font-style: italic;
+    color: #666;
+  }
+  
+  /* Estilos para a seção com os serviços do morador */
+
+
+  .section-servicos {
+    margin-bottom: 40px;
+  }
+  
+  .titulo-servicos {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .lista-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .servico-geral {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .linha-separacao {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    margin: 20px 0;
+  }
+  
+  /* Estilos para a seção com os serviços do morador */
+  
+  .titulo-servicos-morador {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .lista-servicos-morador {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .servico-morador {
+    border: 1px solid #f3f3f3;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e6f0ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.322);
+  }
+  
+  .servico-tipo-morador {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0d0e0f;
+  }
+
+  .servico-status-pendente {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #c41813;
+  }
+
+  .servico-status-concluido {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #36c413;
+  }
+
+  .btn-deletar {
+    margin-right: 2em;
+    background-color: #f00;
+  }
+
+  .btn-deletar:hover {
+    background-color: #c41813;
+  }
+
+  .btn-concluido {
+    background-color: #36c413;
+  }
+
+  .btn-concluido:hover {
+    background-color: #69c022;
+  }
+  
+  .servico-descricao-morador {
+    font-size: 16px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+  }
+  
+  .servico-data-morador {
+    color: #666;
+    font-weight: bolder;
+  }

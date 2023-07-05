@@ -25,7 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // Http Requisição
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 // Services
 import { MoradorService } from './services/Morador/morador.service';
@@ -79,7 +79,8 @@ import { ServicosComponent } from './pages/servicos/servicos.component';
     ReservaService,
     OcorrenciaService,
     AvisoService,
-    AuthService
+    AuthService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

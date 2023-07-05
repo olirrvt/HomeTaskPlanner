@@ -1,1 +1,60 @@
-<p>servicos works!</p>
+<section class="section-servicos">
+    <h1 class="titulo-servicos">Solicitar Serviço</h1>
+    <form [formGroup]="formularioServico" (ngSubmit)="solicitarServico()">
+      <div class="form-group">
+        <label for="tipoServico">Tipo de Serviço:</label>
+        <input type="text" id="tipoServico" placeholder="Encanador, Eletricista, Faxineiro..." formControlName="tipoServico" class="form-control" required>
+        <div *ngIf="formularioServico.get('tipoServico')?.invalid && formularioServico.get('tipoServico')?.touched" class="error-message">
+          O tipo de serviço é obrigatório.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" placeholder="Descreva qual é o seu problema e diga o seu bloco e apartamento..." formControlName="descricao" class="form-control" required></textarea>
+        <div *ngIf="formularioServico.get('descricao')?.invalid && formularioServico.get('descricao')?.touched" class="error-message">
+          A descrição é obrigatória.
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="formularioServico.invalid" class="btn btn-primary">Solicitar</button>
+      </div>
+    </form>
+  </section>
+  
+<!-- Seção com todos os serviços -->
+<section class="section-servicos">
+
+    <div *ngIf="isAdm">
+        <h2 class="titulo-servicos">Todos os Serviços</h2>
+        <div class="lista-servicos">
+          <!-- Serviços gerais -->
+          <div class="servico-geral" *ngFor="let servico of servicosGeral">
+            <h3 class="servico-tipo">{{ servico.tipoServico }}</h3>
+            <p class="servico-descricao">{{ servico.descricao }}</p>
+            <p class="servico-data">{{ servico.dataHoraSolicitacao | date: 'dd/MM/yyyy HH:mm' }}</p>
+          </div>
+    </div>
+  
+      <!-- Linha de separação -->
+      <hr class="linha-separacao">
+  
+      <!-- Serviços do morador logado -->
+      <div>
+          <h2 class="titulo-servicos-morador">Seus Serviços</h2>
+          <div class="lista-servicos-morador">
+            <div class="servico-morador" *ngFor="let servicoMorador of servicosMorador">
+              <h3 class="servico-tipo-morador">{{ servicoMorador.tipoServico }}</h3>
+              <p class="servico-descricao-morador">{{ servicoMorador.descricao }}</p>
+
+              <p [ngClass]="servicoMorador.statusDoServico == 'pendente' ? 'servico-status-pendente' : 'servico-status-concluido'">{{servicoMorador.statusDoServico | titlecase }}</p>
+
+            <p class="servico-data-morador">{{ servicoMorador.dataHoraSolicitacao | date: 'dd/MM/yyyy HH:mm' }}</p>
+
+            <button class="btn-deletar" (click)="apagarServico(servicoMorador.id)">Apagar</button>
+            <button class="btn-concluido" (click)="Servicofeito(servicoMorador.id)">Concluido</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>  
+  
