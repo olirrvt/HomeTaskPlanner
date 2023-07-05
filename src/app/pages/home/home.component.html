@@ -1,12 +1,14 @@
-<section class="section-body-titulo">
-    <div class="container-titulo">
-        <h3>Home</h3>
-        <h1>Tasker Planner</h1>
-        <app-home-button>
-            Explore Now
-        </app-home-button>
-    </div>
 
+
+<section class="section-body-titulo">
+  <div class="container-titulo">
+    <h3>Home</h3>
+    <h1>Tasker Planner</h1>
+    <app-home-button>
+      Explore Now
+    </app-home-button>
+  </div>
+  
     <section class="section-user-logado" *ngIf="usuarioLogado">
         <div class="container-cardhome">
           <!-- Avisos -->
@@ -41,5 +43,32 @@
       
         </div>
       </section>
+
+      <section class="card-section">
+        <app-card
+        imageUrl="../../../assets/img/imagem-card-1.jpg"
+        [title]="'Condomínio dos Sonhos'"
+        [description]="'Um luxuoso condomínio com uma infraestrutura completa, piscinas, quadras, academia e muito mais. Aqui você encontra o conforto e a segurança que merece.'"
+      ></app-card>
+    
+      <app-card
+        imageUrl="../../../assets/img/imagem-card-2.jpg"
+        [title]="'Condomínio Verde Vida'"
+        [description]="'Um condomínio sustentável, cercado por áreas verdes e com foco na preservação do meio ambiente. Aqui você pode viver em harmonia com a natureza.'"
+      ></app-card>
+    
+      <app-card
+        imageUrl="../../../assets/img/imagem-card-3.jpg"
+        [title]="'Condomínio Família Feliz'"
+        [description]="'Um lugar perfeito para criar sua família, com playgrounds, espaços de convivência e eventos especiais para as crianças. Aqui você encontra diversão para toda a família.'"
+      ></app-card>
+    
+      <app-card
+        imageUrl="../../../assets/img/imagem-card-4.jpg"
+        [title]="'Condomínio Moderna Ville'"
+        [description]="'Um condomínio com arquitetura moderna e infraestrutura de última geração. Aqui você desfruta do que há de mais atual em tecnologia e comodidades.'"
+      ></app-card>
+      </section>
+
       
       

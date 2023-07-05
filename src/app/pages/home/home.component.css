@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 .section-body-titulo {
-    margin-top: 7em;
+    margin-top: 25em;
     text-align: center;
 }
 
@@ -87,4 +87,13 @@
   .mural-avisos .aviso-item:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* card-section */
+
+  .card-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30em auto;
   }

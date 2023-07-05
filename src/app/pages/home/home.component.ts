@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Aviso } from 'src/app/models/Aviso';
 import { Contas } from 'src/app/models/Conta';
@@ -11,6 +11,9 @@ import { AvisoService } from 'src/app/services/Aviso/aviso.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  @Input() imageUrl: string = "";
+  @Input() title: string = "";
+  @Input() description: string = "";
   usuarioLogado: boolean = false;
   avisosGeral: Aviso[] = [];
   contasMorador: Contas[] = [];
