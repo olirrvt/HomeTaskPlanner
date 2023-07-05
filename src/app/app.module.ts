@@ -37,6 +37,8 @@ import { AvisoService } from './services/Aviso/aviso.service';
 import { AuthService } from './services/Auth/auth.service';
 import { CookieService } from 'ngx-cookie-service';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { ProdutosComponent } from './pages/produtos/produtos.component';
+import { ServicosComponent } from './pages/servicos/servicos.component';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     HomeButtonComponent,
     CardComponent,
     HeaderLogadoComponent,
-    PerfilComponent
+    PerfilComponent,
+    ProdutosComponent,
+    ServicosComponent
   ],
   imports: [
     BrowserModule,

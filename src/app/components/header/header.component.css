@@ -1,37 +1,54 @@
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-and-title {
+  display: flex;
+  align-items: center;
+}
+
+.logo-da-pagina {
+  max-width: 15vh;
+  cursor: pointer;
+}
+
+.page-title {
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.login-button,
+.register-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover,
+.register-button:hover {
+  background-color: #848688;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .page-title {
+    display: none;
   }
-  
-  .logo-da-pagina {
-    max-width: 19vh;
-    cursor: pointer;
-  }
-  
-  .login-buttons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .login-button,
-  .register-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-left: 10px;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #333;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login-button:hover,
-  .register-button:hover {
-    background-color: #848688;
-    color: #fff;
-    font-weight: bolder;
-  }  
+}
