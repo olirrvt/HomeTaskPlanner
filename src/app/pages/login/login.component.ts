@@ -14,6 +14,7 @@ import { AuthService } from 'src/app/services/Auth/auth.service';
 export class LoginComponent {
   formularioLogin!: FormGroup;
   moradorLogado: Morador | undefined;
+  loginInvalido: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -35,12 +36,12 @@ export class LoginComponent {
 
   EfetuarLogin(): void {
     const login: Login = this.formularioLogin.value;
-
+  
     this.authService.login(login).subscribe((response) => {
       if (response && response.token) {
-
+  
         this.cookieService.set('token', response.token);
-
+  
         this.authService.getMoradorLogado().subscribe(morador => {
           this.moradorLogado = morador;
           console.log(morador);
@@ -48,11 +49,12 @@ export class LoginComponent {
         
         this.authService.estaLogadoSubject.next(true);
         this.router.navigate(['/']);
-
+  
       } else {
-        console.log("Error ao efetuar o login");
+        this.loginInvalido = true;
+        console.log("Erro ao efetuar o login");
       }
     });
-  }
+  }  
 
 } 

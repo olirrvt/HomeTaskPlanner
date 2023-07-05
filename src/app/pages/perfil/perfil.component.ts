@@ -59,7 +59,7 @@ export class PerfilComponent {
     moradorEdit.email = moradorEdit.email || this.morador.email;
 
     this.moradorService.UpdateMorador(moradorEdit).subscribe((res) => {
-      console.log("Atualizado com sucesso!");
+      window.location.reload();
     });
 
   }
