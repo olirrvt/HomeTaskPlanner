@@ -1,32 +1,34 @@
-<header>
-  <div>
-    <img class="logo-da-pagina" routerLink="/" src="../../../assets/img/logo-predio.png" alt="lista-de-tarefas">
-  </div>
-  <nav>
-    <ul class="navbar-menu">
-      <li><a routerLink="/contas">Contas</a></li>
-      <li><a routerLink="/areas-comuns">Reservas</a></li>
-      <li><a routerLink="/ocorrencias">Ocorrências</a></li>
-      <li><a routerLink="/avisos">Avisos</a></li>
-      <li><a routerLink="/visitantes">Visitantes</a></li>
-      <li><a routerLink="/produtos">Produtos</a></li>
-      <li><a routerLink="/servicos">Serviços</a></li>
-    </ul>
-  </nav>
-  <div class="user-profile">
-    <!-- Mostrar informações do morador logado -->
-    <div routerLink="/perfil" class="user-initial">
-      {{ moradorLogado?.nome?.[0] }}
-    </div>
-    <div class="user-info">
-      <span class="user-name">{{ moradorLogado?.nome }}</span>
-      <span class="user-apartment">
-        <strong>Bloco:</strong> {{bloco}} | <strong>Apartamento:</strong> {{numeroApartamento}}
-      </span>
-    </div>
-    <!-- Botão para deslogar ou acessar perfil -->
-    <div class="profile-buttons">
-      <button class="logout-button" (click)="deslogar()">Sair</button>
-    </div>
+<header class="header-fixed">
+  <div class="header-limiter">
+    <h1>
+      <a routerLink="/">Home<span>Planner</span></a>
+      <i class="fa-solid fa-house-laptop fa-2xs" style="color: #ffffff"></i>
+    </h1>
+
+    <nav>
+      <a routerLink="/contas" class="selected">Contas</a>
+      <a routerLink="/ocorrencias">Ocorrências</a>
+      <a routerLink="/avisos">Avisos</a>
+      <a routerLink="/avisos">Visitantes</a>
+      <a routerLink="/avisos">Serviços</a>
+      <a routerLink="/avisos">Reservas</a>
+
+      <div class="user-profile">
+        <div routerLink="/perfil" class="user-initial">
+          {{ moradorLogado?.nome?.[0] }}
+        </div>
+        <div class="user-info">
+          <span class="user-name">{{ moradorLogado?.nome }}</span>
+          <span class="user-apartment">
+            <strong>Bloco:</strong> {{ bloco }} | <strong>Apartamento:</strong>
+            {{ numeroApartamento }}
+          </span>
+        </div>
+        <div class="profile-buttons">
+          <button class="logout-button" (click)="deslogar()">Sair</button>
+        </div>
+      </div>
+      
+    </nav>
   </div>
 </header>
