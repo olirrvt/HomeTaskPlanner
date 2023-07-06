@@ -1,49 +1,102 @@
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #000000dc;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.header-fixed {
+	background-color:#000000;
+	box-shadow:0 1px 1px #00000050;
+	padding: 33px 46px;
+	height: 103px;
+	color: #ffffff;
+	box-sizing: border-box;
+	top:-100px;
+	-webkit-transition:top 0.3s;
+	transition:top 0.3s;
 }
 
-.logo{
-  display: flex;
-  align-items: center;
-  margin: 0 0 0 3em;
+.header-fixed .header-limiter {
+	max-width: 1200px;
+	text-align: center;
+	margin: 0 auto;
 }
 
-.logo-da-pagina {
-  max-width: 15vh;
-  cursor: pointer;
+.header-fixed-placeholder{
+	height: 80px;
+	display: none;
 }
 
-.login-buttons {
-  display: flex;
-  align-items: center;
+/* Logo */
+
+.header-fixed .header-limiter h1 {
+	float: left;
+	font-family: 'Dancing Script', cursive;
+	line-height: 40px;
+	margin: 0;
 }
 
-.login-button,
-.register-button {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-left: 10px;
-  border-radius: 4px;
-  text-decoration: none;
+.header-fixed .header-limiter h1 span {
+	color: #a55e3e;
   font-weight: bolder;
-  color: #ffffff;
+}
+
+/* The navigation links */
+
+.login-btn {
   background-color: #a55e3e;
-  transition: background-color 0.3s ease;
+  border-radius: 3px;
 }
 
-.login-button:hover,
-.register-button:hover {
-  background-color: #6b3217;
+.signUp-btn {
+  background-color: #b89585;
+  border-radius: 3px;
 }
 
-/* Responsividade */
-@media screen and (max-width: 768px) {
-  .page-title {
-    display: none;
-  }
+.header-fixed .header-limiter a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.header-fixed .header-limiter nav {
+	font:16px Arial, Helvetica, sans-serif;
+  display: flex;
+  gap: 0.4em;
+	line-height: 40px;
+	float: right;
+}
+
+.header-fixed .header-limiter nav a {
+	display: inline-block;
+	padding: 3px 5px 3px 5px;
+	text-decoration:none;
+	opacity: 0.9;
+  cursor: pointer;
+	position: relative; 
+  font-weight: bolder;
+}
+
+.header-fixed .header-limiter nav a:before {
+	content: "";
+	left: 0;
+  width: 0;
+  border-radius: 3px;
+	opacity: 0;
+	transition: opacity 0.3s;
+	z-index: -1;
+  transition: 500ms ease-in-out;
+}
+
+.header-fixed .header-limiter nav a:hover:before {
+	opacity: 1;
+  transition: 500ms ease-in-out;
+}
+
+
+.header-fixed .header-limiter nav a {
+  position: relative;
+  transition: 500ms ease-in-out;
+}
+
+.header-fixed .header-limiter nav a:hover {
+  z-index: 1;
+  transition: 500ms ease-in-out;
+  background-color: #a55e3e;
+  border-radius: 3px;
 }

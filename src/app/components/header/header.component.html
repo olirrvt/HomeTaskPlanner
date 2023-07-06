@@ -1,12 +1,16 @@
-<header>
-  <div class="logo">
-    <i class="fa-solid fa-house-laptop fa-2xl" style="color: #ffffff;"></i>
-  </div>
-  <nav>
-    <!-- Adicione os itens de navegação conforme necessário -->
-  </nav>
-  <div class="login-buttons">
-    <a class="login-button" routerLink="/login">Login</a>
-    <a class="register-button" routerLink="/cadastrar">Cadastrar</a>
-  </div>
+<header class="header-fixed">
+	<div class="header-limiter">
+		<h1>
+      <a href="#">Home<span>Planner</span></a>
+      <i class="fa-solid fa-house-laptop fa-2xs" style="color: #ffffff;"></i>
+    </h1>
+		<nav>
+			<a routerLink="/" >Home</a>
+			<a routerLink="/contas"  class="selected">Contas</a>
+			<a routerLink="/ocorrencias" >Ocorrências</a>
+			<a routerLink="/avisos" >Avisos</a>
+			<a routerLink="/cadastrar" class="login-btn">SignUp</a>
+			<a routerLink="/login" class="signUp-btn">Login</a>
+		</nav>
+	</div>
 </header>
