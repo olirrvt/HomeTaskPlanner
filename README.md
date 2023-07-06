@@ -4,7 +4,7 @@ Bem-vindo à aplicação de gerenciamento de condomínio baseada em Angular! Est
 
 ## View da Tela Principal
 
-![image](https://github.com/olirrvt/HomeTaskPlanner/assets/100844800/18e6c207-c565-4d93-b3a0-1f103d1a1646)
+![image](https://github.com/olirrvt/HomeTaskPlanner/assets/100844800/e17dd771-05c2-4f1a-987e-8d842cfaea20)
 
 ## Instalação
 
