@@ -3,25 +3,19 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #000000dc;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.logo-and-title {
+.logo{
   display: flex;
   align-items: center;
+  margin: 0 0 0 3em;
 }
 
 .logo-da-pagina {
   max-width: 15vh;
   cursor: pointer;
-}
-
-.page-title {
-  margin-left: 10px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
 }
 
 .login-buttons {
@@ -36,14 +30,15 @@ header {
   margin-left: 10px;
   border-radius: 4px;
   text-decoration: none;
+  font-weight: bolder;
   color: #ffffff;
-  background-color: #333;
+  background-color: #a55e3e;
   transition: background-color 0.3s ease;
 }
 
 .login-button:hover,
 .register-button:hover {
-  background-color: #848688;
+  background-color: #6b3217;
 }
 
 /* Responsividade */

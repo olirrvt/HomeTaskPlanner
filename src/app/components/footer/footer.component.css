@@ -1,58 +1,76 @@
 .footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    padding: 1em;
-    width: 100%;
-    margin-top: 10em;
-    background-color: #fff;
-  }
-  
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .footer-logo img {
-    max-width: 100px;
-  }
-  
-  .footer-info,
-  .footer-links,
-  .footer-social {
-    flex-basis: calc(25% - 20px);
-  }
-  
-  .footer-info h4,
-  .footer-links h4,
-  .footer-social h4 {
-    color: #000;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-  
-  .footer-links ul,
-  .footer-social ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-links li,
-  .footer-social li {
-    margin-bottom: 8px;
-  }
-  
-  .footer-links a,
-  .footer-social a {
-    color: #000;
-    text-decoration: none;
-  }
-  
-  .social-icon {
-    font-size: 16px;
-    color: #000;
-  }
+    justify-content: space-around;
+    margin-top: 40em;
+    padding: 1.5em 0em 1.5em 0;
+    background-color: #000000;
+    color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.primeira-section,
+.segunda-section,
+.terceira-section,
+.quarta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quarta-section {
+  gap:0.4em;
+}
+
+.primeira-header,
+.segunda-header,
+.terceira-header,
+.quarta-header {
+  margin-bottom: 0.2em;
+}
+
+.primeira-header h4,
+.segunda-header h4,
+.terceira-header h4,
+.quarta-header h4 {
+  padding: 0.4em;
+  border-bottom: 3px #a55e3e solid;
+  border-radius: 3px;
+}
+
+.links-footer,
+.links-icons {
+  list-style: none;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: #a1491f;
+  transition: all 450ms ease-in-out;
+}
+
+.links-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.links-icons {
+  display: flex;
+  margin: 0 2em 0 0em;
+  gap: 0.5em;
+} 
+
+.icons {
+  background-color: #a55e3e;
+  border-radius: 100%;
+  padding: 0.5em;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+}
+
+.icons:hover {
+  background-color: #d87f56;
+  transition: all 450ms ease-in-out;
+}
