@@ -94,7 +94,9 @@
   
   
 .error-message {
-  color: red;
+  color: #c50c0c;
+  font-weight: bolder;
   font-size: 14px;
+  padding: 1em;
   margin-top: 5px;
 }

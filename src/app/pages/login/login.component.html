@@ -21,11 +21,13 @@
     </div>
     <div class="form-actions">
       <button type="submit" class="login-button">Logar</button>
-      <div *ngIf="loginInvalido" class="error-message">Credenciais inválidas. Verifique seu e-mail e senha.</div>
       <a href="#" class="forgot-password">Esqueceu a senha?</a>
     </div>
     <div class="signup-link">
       <p>Não tem uma conta? <a href="/cadastrar">Cadastre-se</a></p>
+      <div *ngIf="loginInvalido" class="error-message">
+      Credenciais inválidas. Verifique seu e-mail e senha.
+      </div>
     </div>
   </form>
 </div>

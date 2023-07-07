@@ -39,12 +39,11 @@ export class LoginComponent {
   
     this.authService.login(login).subscribe((response) => {
       if (response && response.token) {
-  
+
         this.cookieService.set('token', response.token);
   
         this.authService.getMoradorLogado().subscribe(morador => {
           this.moradorLogado = morador;
-          console.log(morador);
         })
         
         this.authService.estaLogadoSubject.next(true);

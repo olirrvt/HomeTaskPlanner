@@ -10,7 +10,6 @@ import { ModalService } from 'src/app/services/Modal/modal.service';
   styleUrls: ['./cadastrar.component.css']
 })
 export class CadastrarComponent {
-
   formulario!: FormGroup;
   
   constructor(

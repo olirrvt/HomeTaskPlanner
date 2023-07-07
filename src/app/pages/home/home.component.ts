@@ -11,9 +11,6 @@ import { AvisoService } from 'src/app/services/Aviso/aviso.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  @Input() imageUrl: string = "";
-  @Input() title: string = "";
-  @Input() description: string = "";
   usuarioLogado: boolean = false;
   avisosGeral: Aviso[] = [];
   contasMorador: Contas[] = [];
