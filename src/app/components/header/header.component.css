@@ -39,16 +39,6 @@
 
 /* The navigation links */
 
-.login-btn {
-  background-color: #a55e3e;
-  border-radius: 3px;
-}
-
-.signUp-btn {
-  background-color: #b89585;
-  border-radius: 3px;
-}
-
 .header-fixed .header-limiter a {
 	color: #ffffff;
 	text-decoration: none;
