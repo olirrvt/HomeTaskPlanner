@@ -57,6 +57,17 @@
     cursor: pointer;
     transition: background-color 0.3s;
   }
+
+  .caixa-validacao {
+    margin-top: 3em;
+  }
+
+  .caixa-validacao ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+  }
   
   .signup-button:hover {
     background-color: #45a049;

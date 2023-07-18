@@ -12,7 +12,6 @@
         formControlName="nome"
         placeholder="Digite o seu nome e sobrenome..."
         required >
-        <!-- [(ngModel)]="nome" -->
       </div>
 
       <div class="form-group">
@@ -24,7 +23,6 @@
         formControlName="apartamento"
         placeholder="Bloco + Apartamento (ex: 08303)" 
         required > 
-        <!-- [(ngModel)]="apartamento"  -->
       </div>
       
       <div class="form-group">
@@ -36,7 +34,6 @@
         formControlName="email"
         placeholder="Digite o seu e-mail"
         required >
-        <!-- [(ngModel)]="email"  -->
       </div>
 
       <div class="form-group">
@@ -48,7 +45,6 @@
         formControlName="senha"
         placeholder="Digite a sua senha..."
         required >
-        <!-- [(ngModel)]="senha"  -->
       </div>
 
       <div class="form-actions">
@@ -59,8 +55,18 @@
         <p>Já tem uma conta? <a routerLink="/login">Faça login</a></p>
       </div>
 
+      <div class="caixa-validacao">
+        <ul>
+          <li><span class="aviso-nome">{{ msgNome }}</span></li>
+          <li><span class="aviso-apartamento">{{ msgApt }}</span></li>
+          <li><span class="aviso-email">{{ msgEmail }}</span></li>
+          <li><span class="aviso-senha">{{ msgSenha }}</span></li>
+        </ul>
+      </div>
+
     </form>
+
 
     <app-modal></app-modal>
     
-  </div>  
+  </div>
