@@ -58,6 +58,8 @@
     transition: background-color 0.3s;
   }
 
+  /* Validação do formulário */
+
   .caixa-validacao {
     margin-top: 3em;
   }
@@ -68,6 +70,19 @@
     gap: 16px;
     list-style: none;
   }
+
+  .item-aviso {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+  }
+
+  .item-aviso span {
+    color: #d11919;
+    font-weight: 500;
+  }
+
+  /* Botão e Links */
   
   .signup-button:hover {
     background-color: #45a049;

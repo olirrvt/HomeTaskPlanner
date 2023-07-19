@@ -55,12 +55,24 @@
         <p>Já tem uma conta? <a routerLink="/login">Faça login</a></p>
       </div>
 
-      <div class="caixa-validacao">
+      <div *ngIf="inputInvalid" class="caixa-validacao">
         <ul>
-          <li><span class="aviso-nome">{{ msgNome }}</span></li>
-          <li><span class="aviso-apartamento">{{ msgApt }}</span></li>
-          <li><span class="aviso-email">{{ msgEmail }}</span></li>
-          <li><span class="aviso-senha">{{ msgSenha }}</span></li>
+          <li *ngIf="this.formulario.controls['nome'].errors?.['required']" class="item-aviso">
+            <i class="fa-solid fa-circle-xmark fa-sm" style="color: #dd081d;"></i>
+            <span class="aviso-nome">{{msgNome}}</span>
+          </li>
+          <li *ngIf="this.formulario.controls['apartamento'].errors?.['required']" class="item-aviso">
+            <i class="fa-solid fa-circle-xmark fa-sm" style="color: #dd081d;"></i>
+            <span class="aviso-apartamento">{{ msgApt }}</span>
+          </li>
+          <li *ngIf="this.formulario.controls['email'].errors?.['required']" class="item-aviso">
+            <i class="fa-solid fa-circle-xmark fa-sm" style="color: #dd081d;"></i>
+            <span class="aviso-email">{{ msgEmail }}</span>
+          </li>
+          <li *ngIf="this.formulario.controls['senha'].errors?.['required']" class="item-aviso">
+            <i class="fa-solid fa-circle-xmark fa-sm" style="color: #dd081d;"></i>
+            <span class="aviso-senha">{{ msgSenha }}</span>
+          </li>
         </ul>
       </div>
 
