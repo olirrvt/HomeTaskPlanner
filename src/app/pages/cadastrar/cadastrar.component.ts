@@ -38,14 +38,14 @@ export class CadastrarComponent {
 
   private inicializarFormulario(): void {
     this.formulario = this.formBuilder.group({
-      nome: ['', [Validators.required, Validators]],
-      apartamento: ['', [Validators.required, Validators]],
-      email: ['', [Validators.required, Validators]],
-      senha: ['', [Validators.required, Validators]],
+      nome: ['', [Validators.required, Validators.pattern(this.nomeRegex)]],
+      apartamento: ['', [Validators.required, Validators.pattern(this.apartamentoRegex)]],
+      email: ['', [Validators.required, Validators.pattern(this.emailRegex)]],
+      senha: ['', [Validators.required, Validators.pattern(this.senhaRegex)]],
       isAdministrador: [false]
     });
   }
-
+  
   EnviarFormulario(): void {
     console.log(this.formulario.valid);
 
