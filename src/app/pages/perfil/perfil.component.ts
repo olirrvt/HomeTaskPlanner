@@ -72,5 +72,10 @@ export class PerfilComponent {
       });
   }
 
+  deslogar(): void {
+    this.authService.logout();
+    window.location.reload();
+  }
+
 }
 

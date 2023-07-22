@@ -39,9 +39,4 @@ export class HeaderLogadoComponent implements OnInit, OnDestroy {
       this.subscription.unsubscribe();
     }
   }
-
-  deslogar(): void {
-    this.authService.logout();
-    window.location.reload();
-  }
 }

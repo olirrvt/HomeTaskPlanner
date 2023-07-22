@@ -6,6 +6,9 @@
     <h2>{{ morador.nome }}</h2>
     <p><strong>Apartamento:</strong> {{ morador.apartamento }}</p>
     <p><strong>Email:</strong> {{ morador.email }}</p>
+    <div class="profile-buttons">
+      <button class="logout-button" (click)="deslogar()">Sair</button>
+    </div>
   </div>
   <div class="profile-actions"></div>
 
