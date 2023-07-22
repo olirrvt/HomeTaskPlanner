@@ -1,93 +1,77 @@
+/* Google Font import (Dancing Script) */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
+/* Header Styles */
+
 .header-fixed {
-	background-color:#000000;
-	box-shadow:0 1px 1px #00000050;
-	padding: 33px 46px;
-	height: 103px;
-	color: #ffffff;
-	box-sizing: border-box;
-	top:-100px;
-	-webkit-transition:top 0.3s;
-	transition:top 0.3s;
+  background-color: #000000;
+  box-shadow: 0 1px 1px #00000050;
+  padding: 20px 46px;
+  color: #ffffff;
+  box-sizing: border-box;
 }
 
 .header-fixed .header-limiter {
-	max-width: 1200px;
-	text-align: center;
-	margin: 0 auto;
-}
-
-.header-fixed-placeholder{
-	height: 80px;
-	display: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Logo */
 
 .header-fixed .header-limiter h1 {
-	float: left;
-	font-family: 'Dancing Script', cursive;
-	line-height: 40px;
-	margin: 0;
+  float: left;
+  font-family: 'Dancing Script', cursive;
+  line-height: 40px;
+  margin: 0;
 }
 
 .header-fixed .header-limiter h1 span {
-	color: #a55e3e;
+  color: #a55e3e;
   font-weight: bolder;
 }
 
-/* The navigation links */
-
-.login-btn {
-  background-color: #a55e3e;
-  border-radius: 3px;
-}
-
-.signUp-btn {
-  background-color: #b89585;
-  border-radius: 3px;
-}
+/* The navigation links and user profile */
 
 .header-fixed .header-limiter a {
-	color: #ffffff;
-	text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .header-fixed .header-limiter nav {
-	font:16px Arial, Helvetica, sans-serif;
+  font: 16px Arial, Helvetica, sans-serif;
   display: flex;
   gap: 0.4em;
-	line-height: 40px;
-	float: right;
+  line-height: 40px;
 }
 
 .header-fixed .header-limiter nav a {
-	display: inline-block;
-	padding: 3px 5px 3px 5px;
-	text-decoration:none;
-	opacity: 0.9;
+  display: inline-block;
+  padding: 3px 5px;
+  text-decoration: none;
+  opacity: 0.9;
   cursor: pointer;
-	position: relative; 
+  position: relative;
   font-weight: bolder;
 }
 
 .header-fixed .header-limiter nav a:before {
-	content: "";
-	left: 0;
+  content: "";
+  left: 0;
   width: 0;
   border-radius: 3px;
-	opacity: 0;
-	transition: opacity 0.3s;
-	z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
   transition: 500ms ease-in-out;
 }
 
 .header-fixed .header-limiter nav a:hover:before {
-	opacity: 1;
+  opacity: 1;
   transition: 500ms ease-in-out;
 }
-
 
 .header-fixed .header-limiter nav a {
   position: relative;
@@ -101,23 +85,66 @@
   border-radius: 3px;
 }
 
+/* Section User */
+
+.section-user {
+  display: flex;
+  justify-content: center;
+  background-color: #f8f7f7bd;
+  padding: 1em;
+  width: 100%;
+}
+
 .user-profile {
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
+  gap: 1.5em;
+}
+
+.user-initial {
+  background-color: #a55e3e;
+  color: #ffffff;
+  border-radius: 6%;
+  cursor: pointer;
+  padding: 1em;
+  font-size: 24px;
+  transition: all 450ms ease-in-out;
+}
+
+.user-initial:hover {
+	background-color: #744936;
+	transition: all 450ms ease-in-out;
 }
 
 .user-info {
   display: flex;
   flex-direction: column;
-  margin-right: 50px;
+  margin-left: 20px;
 }
 
 .user-name {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 
 .user-apartment {
   font-size: 14px;
   color: #666;
+}
+
+.logout-button {
+  background-color: #da0e0e;
+  color: #ffffff;
+  padding: 8px 15px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #7a2626;
 }

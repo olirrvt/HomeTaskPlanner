@@ -12,23 +12,19 @@
       <a routerLink="/avisos">Visitantes</a>
       <a routerLink="/avisos">Serviços</a>
       <a routerLink="/avisos">Reservas</a>
-
-      <div class="user-profile">
-        <div routerLink="/perfil" class="user-initial">
-          {{ moradorLogado?.nome?.[0] }}
-        </div>
-        <div class="user-info">
-          <span class="user-name">{{ moradorLogado?.nome }}</span>
-          <span class="user-apartment">
-            <strong>Bloco:</strong> {{ bloco }} | <strong>Apartamento:</strong>
-            {{ numeroApartamento }}
-          </span>
-        </div>
-        <div class="profile-buttons">
-          <button class="logout-button" (click)="deslogar()">Sair</button>
-        </div>
-      </div>
-      
     </nav>
+
+    <div class="user-profile">
+      <div routerLink="/perfil" class="user-initial">
+        {{ moradorLogado?.nome?.[0] }}
+      </div>
+      <div class="user-info">
+        <span class="user-name">Olá, {{ moradorLogado?.nome }}</span>
+        <span class="user-apartment">
+          <strong>Bloco:</strong> {{ bloco }} | <strong>Apartamento:</strong> {{ numeroApartamento }}
+        </span>
+      </div>
+    </div>
+
   </div>
 </header>
