@@ -1,38 +1,51 @@
-  <section *ngIf="contasMorador.length > 0">
-    <div class="mural">
-      <div class="card-list">
-        <div *ngFor="let conta of contasMorador" class="card">
-          <div class="card-header">
-            Data de Vencimento {{ conta.dataVencimento | date }}
-            <p>ID da conta: {{ conta.id }}</p>
-          </div>
-          <div class="card-body">
-    
-            <p class="area-valor">
-              <strong>Valor:</strong>
-              <span>
-                R$ {{ conta.valor }}
-              </span>
-            </p>
-    
-            <p class="{{conta.status == 'Pago' ? 'status-conta-pago' : 'status-conta-pendente'}}">
-              <strong>Status:</strong>
-              <span>
-                {{ conta.status == "Pago" ? "Paga" : "Pendente" }}
-              </span>
-            </p>
-    
+<section *ngIf="contasMorador.length > 0">
+  <div class="mural">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Data de Vencimento</th>
+          <th>ID da Conta</th>
+          <th>Valor</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let conta of contasMorador"
+          [ngClass]="{
+            'conta-paga': conta.status === 'Pago',
+            'conta-pendente': conta.status === 'Pendente'
+          }"
+        >
+          <td>{{ conta.dataVencimento | date }}</td>
+          <td>{{ conta.id }}</td>
+          <td>R$ {{ conta.valor }}</td>
+          <td>{{ conta.status === "Pago" ? "Paga" : "Pendente" }}</td>
+          <td>
             <button
               (click)="pagarConta(conta)"
-              class="{{ conta.status == 'Pago' ? 'btn-pago' : 'btn-pagar'}}"
-              [disabled]="conta.status == 'Pago'"
-            > Pagar </button>
-    
-            <button (click)="conta.id && deleteConta(conta.id)" class="btn-apagar">
+              [disabled]="conta.status === 'Pago'"
+            >
+              Pagar
+            </button>
+            <button *ngIf="conta.id" (click)="deleteConta(conta.id)">
               Apagar
             </button>
-          </div>
-        </div>
-      </div>
-    </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<ng-template #noContas>
+<section class="notfound-section">
+  <h1>404 Error Page #1</h1>
+  <p class="zoom-area">Contas não encontradas! Verifique sua conexão ou tente recarregar a página</p>
+  <section class="error-container">
+    <span class="four"><span class="screen-reader-text">4</span></span>
+    <span class="zero"><span class="screen-reader-text">0</span></span>
+    <span class="four"><span class="screen-reader-text">4</span></span>
   </section>
+</section>
+</ng-template>

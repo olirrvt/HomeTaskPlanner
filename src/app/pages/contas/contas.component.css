@@ -1,89 +1,335 @@
-.mural {
-  margin: 10em auto;
-  height: 70%; /* Ajuste a altura desejada */
-  max-height: 90%;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  width: 75%;
-  max-width: 80%;
-  overflow: hidden;
+/* Estilo para a tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
-  .card-list {
-    display: flex;
-    flex-direction: column; /* Contas uma embaixo da outra */
-    gap: 20px;
-    padding: 20px; /* Espaçamento interno do mural */
-  }
-  
-  .card {
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
 
-  .area-valor span {
-    color: #0faf32;
-    font-weight: bold;
-  }
-  
-  .card-header {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .card-body {
-    margin-top: 10px;
-  }
+thead th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
 
-  .status-conta-pago span {
-    color: #218838;
-    font-weight: bolder;
-  }
+/* Estilo para linhas de contas pagas */
 
-  .status-conta-pendente span {
-    color: #b31616;
-    font-weight: bolder;
-  }
-  
-  .btn-pagar,
-  .btn-apagar,
-  .btn-pago {
-    cursor: pointer;
-    margin-top: 10px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 3px;
-    color: #fff;
-    font-weight: bold;
-    transition: background-color 0.2s, box-shadow 0.2s;
-  }
-  
-  .btn-pagar {
-    background-color: #28a745;
-    margin-right: 1em;
-  }
+tr.conta-paga {
+  background-color: #c9f7e8;
+}
 
-  .btn-pago {
-    background-color: #313332;
-    margin-right: 1em;
+/* Estilo para linhas de contas pendentes */
+
+tr.conta-pendente {
+  background-color: #ffe6e6;
+}
+
+/* Estilo para botões */
+
+button {
+  cursor: pointer;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Estilo para botão Pagar */
+
+button.btn-pagar {
+  background-color: #007bff;
+}
+
+/* Estilo para botão Pago (quando desabilitado) */
+
+button.btn-pago {
+  background-color: #4caf50;
+}
+
+/* Estilo para botão Apagar */
+
+button.btn-apagar {
+  background-color: #ff0000;
+}
+
+/* Estilo para hover em botões */
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para hover em botões de Apagar */
+
+button.btn-apagar:hover {
+  background-color: #cc0000;
+}
+
+/* Estilo para o cabeçalho do card */
+
+.card-header {
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* Estilo para o card */
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para o corpo do card */
+
+.card-body {
+  padding: 10px;
+}
+
+/* Estilo para o valor da conta */
+
+.area-valor {
+  margin-bottom: 10px;
+}
+
+/* Estilo para o status da conta */
+
+.status-conta-pago {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.status-conta-pendente {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+/* Estilo para a mensagem 404 
+  (Link do criador da animação: https://codepen.io/ricardpriet/pen/qVZxNo;
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Catamaran:400,800");
+
+
+.notfound-section {
+  margin: 8em 0 0 0;
+}
+
+.error-container {
+  text-align: center;
+  font-size: 106px;
+  font-family: "Catamaran", sans-serif;
+  font-weight: 800;
+  margin: 70px 15px;
+}
+.error-container > span {
+  display: inline-block;
+  position: relative;
+}
+.error-container > span.four {
+  width: 136px;
+  height: 43px;
+  border-radius: 999px;
+  background: linear-gradient(
+      140deg,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.07) 43%,
+      transparent 44%,
+      transparent 100%
+    ),
+    linear-gradient(
+      105deg,
+      transparent 0%,
+      transparent 40%,
+      rgba(0, 0, 0, 0.06) 41%,
+      rgba(0, 0, 0, 0.07) 76%,
+      transparent 77%,
+      transparent 100%
+    ),
+    linear-gradient(to right, #d89ca4, #e27b7e);
+}
+.error-container > span.four:before,
+.error-container > span.four:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 999px;
+}
+.error-container > span.four:before {
+  width: 43px;
+  height: 156px;
+  left: 60px;
+  bottom: -43px;
+  background: linear-gradient(
+      128deg,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.07) 40%,
+      transparent 41%,
+      transparent 100%
+    ),
+    linear-gradient(
+      116deg,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.07) 50%,
+      transparent 51%,
+      transparent 100%
+    ),
+    linear-gradient(to top, #99749d, #b895ab, #cc9aa6, #d7969e, #e0787f);
+}
+.error-container > span.four:after {
+  width: 137px;
+  height: 43px;
+  transform: rotate(-49.5deg);
+  left: -18px;
+  bottom: 36px;
+  background: linear-gradient(
+    to right,
+    #99749d,
+    #b895ab,
+    #cc9aa6,
+    #d7969e,
+    #e0787f
+  );
+}
+
+.error-container > span.zero {
+  vertical-align: text-top;
+  width: 156px;
+  height: 156px;
+  border-radius: 999px;
+  background: linear-gradient(
+      -45deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.06) 50%,
+      transparent 51%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to top right,
+      #99749d,
+      #99749d,
+      #b895ab,
+      #cc9aa6,
+      #d7969e,
+      #ed8687,
+      #ed8687
+    );
+  overflow: hidden;
+  animation: bgshadow 5s infinite;
+}
+.error-container > span.zero:before {
+  content: "";
+  display: block;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 90px;
+  height: 90px;
+  background-color: transparent;
+  left: 0px;
+  bottom: 0px;
+  background: linear-gradient(
+      95deg,
+      transparent 0%,
+      transparent 8%,
+      rgba(0, 0, 0, 0.07) 9%,
+      transparent 50%,
+      transparent 100%
+    ),
+    linear-gradient(
+      85deg,
+      transparent 0%,
+      transparent 19%,
+      rgba(0, 0, 0, 0.05) 20%,
+      rgba(0, 0, 0, 0.07) 91%,
+      transparent 92%,
+      transparent 100%
+    );
+}
+.error-container > span.zero:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 999px;
+  width: 70px;
+  height: 70px;
+  left: 43px;
+  bottom: 43px;
+  box-shadow: -2px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.screen-reader-text {
+  position: absolute;
+  top: -9999em;
+  left: -9999em;
+}
+
+@keyframes bgshadow {
+  0% {
+    box-shadow: inset -160px 160px 0px 5px rgba(0, 0, 0, 0.4);
   }
-  
-  .btn-apagar {
-    background-color: #dc3545;
+  45% {
+    box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
   }
-  
-  .btn-pagar:hover {
-    background-color: #218838;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  55% {
+    box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
   }
-  
-  .btn-apagar:hover {
-    background-color: #c82333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  100% {
+    box-shadow: inset 160px -160px 0px 5px rgba(0, 0, 0, 0.4);
   }
-  
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Montserrat", Helvetica, sans-serif;
+  color: #bbb;
+}
+h1 {
+  color: #f0f5f3;
+  text-align: center;
+  margin: 30px 15px;
+}
+.zoom-area {
+  color: #f0f5f3;
+  font-weight: bolder;
+  max-width: 490px;
+  margin: 30px auto 30px;
+  font-size: 19px;
+  text-align: center;
+}
+.link-container {
+  text-align: center;
+}
+a.more-link {
+  text-transform: uppercase;
+  font-size: 13px;
+  background-color: #de7e85;
+  padding: 10px 15px;
+  border-radius: 0;
+  color: #fff;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  line-height: 1.5;
+  text-decoration: none;
+  margin-top: 50px;
+  letter-spacing: 1px;
+}

@@ -59,7 +59,6 @@ export class ContasComponent {
   cadastrarConta() {
     // Obter a data atual
     const hoje = new Date();
-  
     // Adicionar 10 dias à data atual
     hoje.setDate(hoje.getDate() + 10);
   
