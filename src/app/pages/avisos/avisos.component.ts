@@ -17,6 +17,9 @@ export class AvisosComponent {
   isAdm!: boolean;
   avisos: Aviso[] = [];
 
+  // Variavel auxiliar para mudar para registro
+  registrarNovoAviso: boolean = false;
+
   constructor(
     private avisoService: AvisoService,
     private authService: AuthService,
@@ -38,6 +41,14 @@ export class AvisosComponent {
       });
   }
 
+  mudarParaRegistroAviso(): void {
+    this.registrarNovoAviso = true;
+  }
+
+  voltarParaViewAviso(): void {
+    this.registrarNovoAviso = false;
+  }
+
   verificaMoradorIsAdm(): void {
     this.authService.getMoradorLogado().subscribe((res) => {
       this.isAdm = res.isAdministrador;
@@ -55,8 +66,13 @@ export class AvisosComponent {
   criarAviso(): void {
     const aviso: Aviso = this.formularioAviso.value;
     this.avisoService.createAviso(aviso).subscribe((res) => {
-      console.log("Aviso criado!");
       this.avisos.push(res);
+    });
+  }
+
+  apagarAviso(aviso: Aviso): void {
+    this.avisoService.deleteAviso(aviso.id).subscribe(() => {
+      this.avisos = this.avisos.filter((a) => a !== aviso);
     });
   }
 

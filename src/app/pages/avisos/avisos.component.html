@@ -1,7 +1,7 @@
 
-  <section class="conteudo-avisos-form" *ngIf="isAdm">
-    <h1>Cadastrar Avisos</h1>
+  <section *ngIf="registrarNovoAviso" class="conteudo-avisos-form">
     <form class="avisos-form" [formGroup]="formularioAviso" (submit)="criarAviso()">
+      <h1 style="color: #000; text-align: center;">Cadastrar Avisos</h1>
       <div class="form-group">
         <label for="titulo">Titulo do Aviso:</label>
         <input
@@ -23,22 +23,33 @@
         formControlName="mensagem" 
         required>
       </div>
+      <button class="btn-voltar" (click)="voltarParaViewAviso()"><i class="fa-solid fa-backward"></i></button>
       <button class="btn-submit" type="submit">Criar aviso</button>
     </form>
   </section>
 
-  <section>
+  <section *ngIf="!registrarNovoAviso" class="tabela-avisos">
     <div class="aviso-mural-container">
-        <h1>Lista de Avisos</h1>
-        <div *ngIf="avisos.length === 0; else avisosList">
-          <p>Nenhum aviso cadastrado.</p>
-        </div>
-        <ng-template #avisosList>
-          <div *ngFor="let aviso of avisos" class="aviso-card">
-            <h3>{{ aviso.titulo }}</h3>
-            <p>{{ aviso.mensagem }}</p>
-          </div>
-        </ng-template>
-      </div>
-  </section>
+      <h1>Lista de Avisos</h1>
+      <table *ngIf="avisos.length > 0">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Mensagem</th>
+            <th>Data de Publicação</th>
+            <th>Apagar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let aviso of avisos" class="aviso-card">
+            <td>{{ aviso.titulo }}</td>
+            <td>{{ aviso.mensagem }}</td>
+            <td>{{ aviso.dataPublicacao | date:'medium' }}</td>
+            <td *ngIf="isAdm"><button *ngIf="aviso.id" (click)="apagarAviso(aviso)">Apagar</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <button *ngIf="isAdm" (click)="mudarParaRegistroAviso()" class="registro-aviso">Registrar novo aviso</button>
+    </div>
+  </section>   
 

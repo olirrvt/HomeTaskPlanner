@@ -1,13 +1,7 @@
 /* Fórmulario de avisos */
 
 .conteudo-avisos-form {
-  max-width: 85%;
-  width: 80%;
   margin: 17em auto;
-  border-radius: 5px;
-  padding: 4em;
-  background-color: #faf6f6;
-  box-shadow: 0 0 9px 0px rgba(26, 23, 23, 0.411);
 }
 
 .avisos-form {
@@ -30,9 +24,8 @@
     font-weight: bold;
   }
   
-  .btn-submit {
-    background-color: #45a049;
-    color: #fff;
+  .btn-submit,
+  .btn-voltar {
     padding: 10px 20px;
     margin-top: 0.5em;
     border: none;
@@ -41,68 +34,92 @@
     transition: background-color 0.3s;
   }
   
+  .btn-submit {
+    background-color: #45a049;
+    color: #fff;
+    font-weight: bolder;
+  }
+
+  .btn-voltar {
+    background-color: #8a8b8a;
+    color: #fff;
+    margin-right: 1em;
+  }
+
   .btn-submit:hover {
     background-color: #195f1d;
     transform: scale(1.05);
-  }  
+  }
 
-/* Mural de Avisos */
+  .btn-voltar:hover {
+    background-color: #292b29;
+    transform: scale(1.05);
+  }
 
-.conteudo-avisos {
-  max-width: 85%;
-  width: 80%;
-  margin: 17em auto;
-  border-radius: 5px;
-  padding: 0.5em;
-  background-color: #ddd8d8;
-  box-shadow: 0 0 9px 0px rgb(252, 249, 249);
-}
+  /* Tabela de avisos */
+  
+  .tabela-avisos {
+    text-align: center;
+    margin: 5em auto;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 1.8em;
+    width: 90%;
+  }
 
-.aviso-mural-container {
-    max-width: 75%;
-    margin: 20em auto;
+  .aviso-mural-container {
+    margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+  }
+  
+  th, td {
+    padding: 2em;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
   }
   
   .aviso-card {
-    background-color: #fff;
-    padding: 3em;
-    margin-bottom: 10px;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease; 
+    margin-top: 10px;
+    padding: 10px;
   }
   
   .aviso-card h3 {
-    color: #333;
+    margin-bottom: 5px;
   }
   
-  .aviso-card p {
-    color: #777;
+  .aviso-card button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
   }
   
-  .aviso-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .aviso-card button:hover {
+    background-color: #c82333;
   }
-  
-  .aviso-card h3, .aviso-card p {
-    opacity: 0;
-    animation: fadeIn 0.5s ease-in-out forwards;
+
+  .registro-aviso {
+    background-color: #ddd;
+    color: #000;
+    font-weight: bold;
+    padding: 0.5em;
+    width: 100%;
+    margin-top: 3em;
+    border: none;
   }
-  
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-  
