@@ -21,6 +21,9 @@ export class OcorrenciasComponent {
   formularioOcorrencia!: FormGroup;
   idMoradorLogado: number = 0;
 
+  // Identificador de cadastro de ocorrencia
+  cadastrarOcorrencia: boolean = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private ocorrenciaService: OcorrenciaService,
@@ -37,6 +40,14 @@ export class OcorrenciasComponent {
     interval(20000).subscribe(() => {
       this.ocorrenciaFinalizada = false;
     });
+  }
+
+  mudarParaCadastroOcorrencias(): void {
+    this.cadastrarOcorrencia = true;
+  }
+
+  mudarParaViewOcorrencias(): void {
+   this.cadastrarOcorrencia = false;
   }
 
   private buscarOcorrencias(): void {

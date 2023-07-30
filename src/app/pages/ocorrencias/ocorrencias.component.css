@@ -1,193 +1,138 @@
-.conteudo-ocorrencias {
-  max-width: 85%;
-  width: 80%;
-  margin: 17em auto;
-  border-radius: 5px;
-  padding: 0.5em;
-  background-color: #ddd8d8;
+/* Estilos gerais da tabela */
+
+.mural-morador-ocorrencia,
+.mural-ocorrencia {
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
 }
-
-.container-ocorrencia {
-    margin: 20em auto;
-}
-
-.ocorrencia-form {
-    max-width: 60%;
-    margin: 0 auto;
-    padding: 4em;
-    background-color: #f7f7f7;
-    border: 1px solid #eaeaea;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .ocorrencia-form h2 {
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  textarea, input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-
-  .ocorrencia-finalizada-alert {
-    display: block;
-    text-align: center;
-    color: #3dad43;
-    font-weight: bold;
-    margin: 20px 19px;
-    padding: 1em;
-    border: 1px solid #3dad43;
-    color: #fff;
-    border-radius: 5px;
-    background-color: #3dad43;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .check-icon {
-    color: #3dad43;
-    font-size: 18px;
-    margin-right: 4em;
-  }
-  
-  
-  .btn-submit {
-    background-color: #45a049;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-submit:hover {
-    background-color: #3dad43;
-    transform: scale(1.05);
-  }  
-  
-/* Mural de Ocorrências */
 
 .container-mural {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-width: 600px;
-  margin: 0 auto;
-  margin-bottom: 15em;
-}
-
-h2 {
-  text-align: center;
+  background-color: #f7f7f7;
+  padding: 45px;
+  width: 65%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
 
-.ocorrencia-header {
-  margin-bottom: 1em;
+h4 {
+  color: #141212;
+  text-align: center;
 }
 
-.ocorrencia-descricao {
-  background-color: #f8f1f1;
-  padding: 0.9em;
-  box-shadow: 1px 1px 2px 3px rgba(0, 0, 0, 0.1);;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-.ocorrencias {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+th,
+td {
+  padding: 20px 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
-.ocorrencia {
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-  animation-name: fadeIn;
-  animation-duration: 1s;
+th {
+  background-color: #f2f2f2;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Mural de Ocorrências do Morador */
-
-.mural-morador-ocorrencia {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-width: 600px;
-  margin: 0 auto;
-  margin-bottom: 15em;
-}
+/* Estilos para a primeira tabela */
 
 .mural-morador-ocorrencia h2 {
-  text-align: center;
-  margin-bottom: 1em;
-  margin-top: 1em;
+  color: #fff;
 }
 
-.mural-morador-ocorrencia .ocorrencias {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.mural-morador-ocorrencia .ocorrencia {
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.deletar-ocorrencia {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #ec0303;
-  color: white;
+.mural-morador-ocorrencia .deletar-ocorrencia {
+  background-color: #ff4d4d;
+  color: #fff;
   border: none;
+  padding: 8px 12px;
   border-radius: 5px;
-  margin-top: 2em;
-  font-size: 16px;
   cursor: pointer;
+}
+
+.mural-morador-ocorrencia .deletar-ocorrencia:hover {
+  background-color: #e60000;
+}
+
+.link-cadastro {
+  border: none;
+  background-color: #e1e1e1;
+  box-shadow: 1px 1px 5px 0px #0000004f;
+  color: #000000cc;
+  font-weight: 500;
+  padding: 0.5em;
+  margin-top: 2.5em;
+  width: 100%;
+}
+
+/* Estilos para a segunda tabela */
+
+.mural-ocorrencia h2 {
+  color: #fff;
+}
+
+.mural-morador-ocorrencia td:last-child {
   text-align: center;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
 }
 
-.deletar-ocorrencia:hover {
-  background-color: #a11f1f; 
+/* Estilo de formulario de cadastro */
+
+.form-container {
+  width: 90%;
+  margin: 10em auto;
+  padding: 80px;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo ao clicar no botão */
-.deletar-ocorrencia:active {
-  background-color: #470f0f; 
+h2 {
+  color: #333;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.btn-cadastro-ocorrencias,
+.btn-return {
+  font-weight: bolder;
+  width: 100%;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.btn-cadastro-ocorrencias {
+  color: #ffffff;
+  background-color: #209e0f;
+}
+
+.btn-return {
+  background-color: #e1e1e1;
+  box-shadow: 1px 1px 5px 0px #0000004f;
+  color: #0c0b0bcc;
+  margin-top: 1em;
 }

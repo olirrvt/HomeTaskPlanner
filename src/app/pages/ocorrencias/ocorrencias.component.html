@@ -1,63 +1,61 @@
-
-  <section class="registro-ocorrencia">
-      <div class="container-ocorrencia">
-          <form class="ocorrencia-form" [formGroup]="formularioOcorrencia" (ngSubmit)="EnviarFormularioOcorrencia()">
-            <h2>Registro de Ocorrência</h2>
-        
-            <div class="form-group">
-              <label for="descricao">Descrição:</label>
-              <textarea 
-              id="descricao" 
-              class="form-control" 
-              rows="4" 
-              name="descricao"
-              formControlName="descricao" 
-              required></textarea>
-            </div>
-        
-            <div class="form-group">
-              <button type="submit" class="btn-submit">Registrar Ocorrência</button>
-            </div>
-  
-            <span *ngIf="ocorrenciaFinalizada" class="ocorrencia-finalizada-alert">
-              <i class="fas fa-check"></i>
-              <strong>Ocorrência registrada com sucesso!</strong>
-            </span>
-            
-          </form>
-        </div>
-  </section>
-
-  <section class="mural-morador-ocorrencia" *ngIf="ocorrenciasExistem">
+<div *ngIf="!cadastrarOcorrencia" class="ocorrencias-principais">
+<section class="mural-morador-ocorrencia" *ngIf="ocorrenciasExistem">
     <div class="container-mural">
-      <h2 style="color: #fff;">Minhas Ocorrências</h2>
-      <div class="ocorrencias">
-        <div class="ocorrencia" *ngFor="let ocorrencia of ocorrenciasDoMorador">
-          <div class="ocorrencia-header">
-            <span class="ocorrencia-id"><strong>ID N°:</strong> {{ ocorrencia.id }}</span>
-            <br>
-            <span class="ocorrencia-data"><strong>Hora do Registro: </strong>{{ ocorrencia.dataHoraRegistro | date: 'dd/MM/yyyy HH:mm' }}</span>
-          </div>
-          <div class="ocorrencia-descricao">{{ ocorrencia.descricao }}</div>
-          <button class="deletar-ocorrencia" (click)="deletarOcorrencia(ocorrencia.id)">Deletar</button>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h4 style="color: #131212;">Minhas Ocorrências</h4>
+      <table class="ocorrencias-table">
+        <thead>
+          <tr>
+            <th>ID N°</th>
+          <th>Hora do Registro</th>
+          <th>Descrição</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ocorrencia of ocorrenciasDoMorador">
+          <td>{{ ocorrencia.id }}</td>
+          <td>{{ ocorrencia.dataHoraRegistro | date: 'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ ocorrencia.descricao }}</td>
+          <td><button class="deletar-ocorrencia" (click)="deletarOcorrencia(ocorrencia.id)">Deletar</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="mudarParaCadastroOcorrencias()" class="link-cadastro">Cadastrar Ocorrências</button>
+  </div>
+</section>
+<section class="mural-ocorrencia">
+  <div class="container-mural">
+    <h4 style="color: #131212;">Mural de Ocorrências</h4>
+    <table class="ocorrencias-table">
+      <thead>
+        <tr>
+          <th>ID N°</th>
+          <th>Hora do Registro</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ocorrencia of ocorrenciasRegistradas">
+          <td>{{ ocorrencia.id }}</td>
+          <td>{{ ocorrencia.dataHoraRegistro | date: 'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ ocorrencia.descricao }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+</div>
 
-  <section class="mural-ocorrencia">
-      <div class="container-mural">
-          <h2 style="color: #fff;">Mural de Ocorrências</h2>
-          <div class="ocorrencias">
-            <div class="ocorrencia" *ngFor="let ocorrencia of ocorrenciasRegistradas">
-              <div class="ocorrencia-header">
-                <span class="ocorrencia-id"><strong>ID N°:</strong> {{ ocorrencia.id }}</span>
-                <br>
-                <span class="ocorrencia-data"><strong>Hora do Registro: </strong>{{ ocorrencia.dataHoraRegistro | date: 'dd/MM/yyyy HH:mm' }}</span>
-              </div>
-              <div class="ocorrencia-descricao">{{ ocorrencia.descricao }}</div>
-            </div>
-          </div>
-        </div>      
-  </section>
-  
+<div *ngIf="cadastrarOcorrencia" class="form-container">
+  <h2>Cadastrar Ocorrência</h2>
+  <form [formGroup]="formularioOcorrencia" (ngSubmit)="EnviarFormularioOcorrencia()">
+    <div class="form-group">
+      <label for="descricao">Descrição:</label>
+      <textarea formControlName="descricao" id="descricao" rows="4"></textarea>
+    </div>
+    <div class="form-group">
+      <button class="btn-cadastro-ocorrencias" type="submit">Cadastrar Ocorrência</button>
+      <button (click)="mudarParaViewOcorrencias()" class="btn-return"> Voltar para visualização </button>
+    </div>
+  </form>
+</div>
