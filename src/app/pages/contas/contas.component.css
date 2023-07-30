@@ -1,7 +1,7 @@
 .table-container {
   background-color: #fff;
-  padding: 3em 1em 3em 1em;
-  margin: 3em auto;
+  padding: 3em 0em 3em 0em;
+  margin: 10em auto;
   border-radius: 8px;
   width: 90%;
   display: flex;
@@ -78,4 +78,28 @@ button[disabled] {
 .status-paga {
   color: #0a0;
   font-weight: bold;
+}
+
+/* Mensagem de error */
+
+.error-container {
+  text-align: center;
+  margin: 10em auto;
+  width: 60%;
+  padding: 20px;
+  border: 2px solid #fcf4f4;
+  border: 2px solid #fcf4f4;
+  border-radius: 5px;
+  background-color: #ffe6e6;
+  color: #ff4d4d;
+}
+
+.error-container i {
+  font-size: 48px;
+}
+
+.error-message {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: bolder;
 }

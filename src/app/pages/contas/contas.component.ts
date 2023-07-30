@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/Auth/auth.service';
 export class ContasComponent {
   contasMorador: Contas[] = [];
   moradorId!: number;
+  contasExistem: boolean = false;
 
   constructor (
     private contasService: ContasService,
@@ -18,7 +19,7 @@ export class ContasComponent {
     ) { }
 
   ngOnInit() {
-    this.carregarContasPendentes();
+    this.carregarContas();
     setInterval(() => {
       const hoje = new Date();
       if (hoje.getDate() === 1) {
@@ -27,12 +28,14 @@ export class ContasComponent {
     }, 1000 * 60 * 60 * 24);
   }
 
-  carregarContasPendentes() {
+  carregarContas() {
     this.authService.getMoradorLogado().subscribe(morador => {
-      if (morador && morador.conta) {
+      console.log(morador.conta.length);
+      if (morador.conta.length !== 0) {
         this.contasMorador = morador.conta;
+        this.contasExistem = true;
       } else {
-        console.log('O morador não possui conta associadas a ele!');
+        this.contasExistem = false;
       }
     });
   }
@@ -46,13 +49,13 @@ export class ContasComponent {
   pagarConta(conta: Contas) {
     conta.status = "Paga";
     this.contasService.pagarConta(conta).subscribe(() => {
-      this.carregarContasPendentes();
+      this.carregarContas();
     });
   }
 
   deleteConta(contaId: number) {
     this.contasService.deleteConta(contaId).subscribe(() =>{
-      this.carregarContasPendentes();
+      this.carregarContas();
     });
   }
 
@@ -71,7 +74,7 @@ export class ContasComponent {
   
     // Chamar o serviço para cadastrar a nova conta
     this.contasService.addConta(novaConta).subscribe(() => {
-      this.carregarContasPendentes();
+      this.carregarContas();
     });
   }
 

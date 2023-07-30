@@ -1,4 +1,4 @@
-<div class="table-container">
+<div *ngIf="contasExistem" class="table-container">
   <table>
     <thead>
       <tr>
@@ -22,4 +22,8 @@
       </tr>
     </tbody>
   </table>
+</div>
+<div *ngIf="!contasExistem" class="error-container">
+  <i class="fas fa-exclamation-circle"></i>
+  <p class="error-message">Erro 404: Contas não encontradas.</p>
 </div>
