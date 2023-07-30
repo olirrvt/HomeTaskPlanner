@@ -1,4 +1,9 @@
 .table-container {
+  background-color: #fff;
+  padding: 3em 1em 3em 1em;
+  margin: 3em auto;
+  border-radius: 8px;
+  width: 90%;
   display: flex;
   justify-content: center;
 }
