@@ -1,17 +1,7 @@
-.conteudo-visitantes {
-  max-width: 85%;
-  width: 80%;
-  margin: 17em auto;
-  border-radius: 5px;
-  padding: 0.5em;
-  background-color: #ddd8d8;
-  box-shadow: 0 0 9px 0px rgb(252, 249, 249);
-}
-
 .visitante-form-container {
     max-width: 60%;
     margin: 15em auto;
-    padding: 20px;
+    padding: 5em;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -42,99 +32,106 @@
     border-radius: 5px;
     width: 100%;
   }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #45a049;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+  .container-btn {
+    display: flex;
+    gap: 0.5em;
   }
   
-  button:hover {
+  .cadastrar-visitante,
+  .button-comeback {
+    color: #fff;
+    width: 18%;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .cadastrar-visitante {
+    padding: 10px 20px;
+    background-color: #45a049;
+    transition: all 450ms ease-in-out;
+  }
+  
+  .button-comeback {
+    padding: 10px 20px;
+    background-color: #9fa19f;
+    transition: all 450ms ease-in-out;
+  }
+  
+  .cadastrar-visitante:hover {
     background-color: #4CAF50;
+    transition: all 450ms ease-in-out;
+  }
+
+  .button-comeback:hover {
+    background-color: #4f5a4f;
+    transition: all 450ms ease-in-out;
   }
   
   .alert-cadastrado {
     color: #45a049;
   }
 
-/* Mural de Visitantes */
-
-.visitantes-do-morador h1 {
-  text-align: center;
-  margin-bottom: 1em;
-}
+/* Estilo de Tabela de Visitantes */
 
 .visitante-mural-container {
-  max-width: 600px;
-  margin: 0 auto;
-  margin-bottom: 8em;
-  background-color: #fff;
-  padding: 10em;
-}
-
-h2 {
+  margin: 6em auto;
   text-align: center;
-  margin-bottom: 20px;
 }
 
-.visitante-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+.table-container {
+  padding: 60px 1px 1px 1px;
+  margin: 6em auto;
+  background-color: #f1eeee;
+  width: 90%;
+  border-radius: 8px;
 }
 
-.visitante-card {
-  padding: 20px;
-  border: 1px solid #ccc;
+.visitante-table {
+  margin: 6em auto;
+  width: 90%;
+  border-collapse: collapse;
+  background-color: #ddd;
+}
+
+.visitante-table th,
+.visitante-table td {
+  border: 1px solid #ddd;
+  padding: 1em;
+  text-align: left;
+}
+
+.visitante-table th {
+  background-color: #f2f2f2;
+}
+
+.visitante-table td button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.visitante-table td button:hover {
+  background-color: #c82333;
+}
+
+.button-cadastrar-visitante {
+  background-color: #b6b4b4;
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0px 2px 15px #00000040;
+  width: 90%;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-
-  /* Adicionar a animação de fade in */
-  animation-name: fadeIn;
-  animation-duration: 1s;
+  padding: 9px;
+  margin-bottom: 2em;
+  transition: all 450ms;
 }
 
-/* Efeito hover para escala e sombra */
-.visitante-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.button-cadastrar-visitante:hover {
+  background-color: #8b8989;
+  transition: all 450ms;
 }
-
-/* Definir a animação de fade in */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-  
-    /* Estilos padrão para o botão */
-    .deletar-visitante {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #e40606; /* Cor de fundo verde */
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    /* Estilo ao passar o mouse sobre o botão */
-    .deletar-visitante:hover {
-      background-color: #a11713; /* Cor de fundo verde mais escura */
-    }
-
-    /* Estilo ao clicar no botão */
-    .deletar-visitante:active {
-      background-color: #330606; /* Cor de fundo verde ainda mais escura */
-    }

@@ -12,13 +12,22 @@ import { VisitanteService } from 'src/app/services/Visitantes/visitante.service'
   styleUrls: ['./visitantes.component.css']
 })
 export class VisitantesComponent {
+  // Verifica se o morador tem privilégios
+  isAdm!: boolean;
+  // Visitantes
   visitantes: Visitante[] = [];
-  visitantesDoMorador: Visitante[] = [];
+  // Verifica se o morador tem visitante
   moradorTemVisitante: boolean = false;
+  visitantesDoMorador: Visitante[] = [];
+  // Controle de Formulário
   formularioVisitante!: FormGroup;
+  // Controle de Data
   dataAgora: Date = new Date();
   visitanteCadastrado: boolean = false;
   idDoMoradorLogado: number = 0;
+  // Variável para mudar de estado para cadastrar visistante
+  cadastrarVisitante: boolean = false;
+
 
   constructor(
     private visitanteService: VisitanteService,
@@ -32,11 +41,26 @@ export class VisitantesComponent {
     this.pegarVisitantesCadastrados();
     this.buscarIdDoMoradorLogado();
     this.buscarVisitantesDoMorador();
+    this.verificaMoradorIsAdm();
   };
+
+  mudarParaCadastro(): void {
+    this.cadastrarVisitante = true;
+  }
+
+  voltarParaViewVisitante(): void {
+    this.cadastrarVisitante = false;
+  }
 
   private buscarIdDoMoradorLogado(): any {
     this.authService.getMoradorLogado().subscribe((res) => {
       this.idDoMoradorLogado = res.id;
+    });
+  }
+
+  verificaMoradorIsAdm(): void {
+    this.authService.getMoradorLogado().subscribe((res) => {
+      this.isAdm = res.isAdministrador;
     });
   }
 

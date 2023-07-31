@@ -1,4 +1,65 @@
-<section>
+<section *ngIf="!cadastrarVisitante" class="visitantes">
+
+  <div class="visitante-mural-container">
+
+    <div class="table-container">
+      <h1>Seus visitantes</h1>
+      <span style="color: #887d7d; font-weight: bolder;"> Seu N° identificador: {{idDoMoradorLogado}}° </span>
+      <table class="visitante-table">
+        <thead>
+          <tr>
+            <th>N° de identificação</th>
+            <th>Nome do visitante</th>
+            <th>Data e Hora de Saída</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let visitante of visitantesDoMorador">
+            <td>{{ visitante.id }}</td>
+            <td>{{ visitante.nomeVisitante | titlecase }}</td>
+            <td>{{ visitante.dataHoraSaida }}</td>
+            <td>
+              <button class="deletar-visitante" (click)="apagarVisitante(visitante.id)">Deletar visitante</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="button-cadastrar-visitante" (click)="mudarParaCadastro()">Cadastrar um visitante</button>
+    </div>
+
+    <div *ngIf="isAdm" class="visitante-mural-container">
+      <div class="table-container">
+        <h1>Todos os visitantes</h1>
+        <table class="visitante-table">
+          <thead>
+            <tr>
+              <th>N° Morador</th>
+              <th>N° de identificação</th>
+              <th>Nome do visitante</th>
+              <th>Data e Hora de Saída</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let visitante of visitantes">
+              <td>{{ visitante.moradorId }}</td>
+              <td>{{ visitante.id }}</td>
+              <td>{{ visitante.nomeVisitante | titlecase }}</td>
+              <td>{{ visitante.dataHoraSaida }}</td>
+              <td>
+                <button class="deletar-visitante" (click)="apagarVisitante(visitante.id)">Deletar visitante</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section *ngIf="cadastrarVisitante">
       <div class="visitante-form-container">
         <h2>Cadastrar Visitante</h2>
         <form [formGroup]="formularioVisitante" (ngSubmit)="CadastrarVisitante()">
@@ -22,7 +83,12 @@
               required
             />
           </div>
-          <button type="submit">Cadastrar</button>
+          <div class="container-btn">
+            <button (click)="voltarParaViewVisitante()" class="button-comeback">
+              <i class="fa-solid fa-backward"></i>
+            </button>
+            <button class="cadastrar-visitante" type="submit">Cadastrar</button>
+          </div>
           <br>
           <span *ngIf="visitanteCadastrado" class="alert-cadastrado">
               <strong>Visitante cadastrado com sucesso!</strong>
@@ -30,17 +96,3 @@
         </form>
       </div>
   </section>
-
-  <section class="visitantes-do-morador" *ngIf="moradorTemVisitante">
-    <div class="visitante-mural-container">
-      <h1>Seus visitantes</h1>
-        <div class="visitante-list">
-            <div *ngFor="let visitante of visitantesDoMorador" class="visitante-card">
-            <h2>Visitante N° de identificação: {{ visitante.id }}</h2>
-            <h3>{{ visitante.nomeVisitante | titlecase }}</h3>
-            <p>Data e Hora de Saída: {{ visitante.dataHoraSaida }}</p>
-            <button class="deletar-visitante" (click)="apagarVisitante(visitante.id)">Deletar visitante</button>
-          </div>
-        </div>
-      </div>
-</section>
